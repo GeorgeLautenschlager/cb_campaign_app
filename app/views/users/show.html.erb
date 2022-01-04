@@ -4,5 +4,13 @@
     <%= current_user.email %>
   </h1>
 
+  <div>
+    TODO:
+    <ul>
+      <li>Assigned Pilot</li>
+      <li>Assigned Cards</li>
+    </ul>
+  </div>
+
   <%= button_to 'Log Out', destroy_user_session_path, method: :delete%>
 </div>

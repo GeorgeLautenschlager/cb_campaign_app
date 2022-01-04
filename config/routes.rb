@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "users#show"
 
   # Routes set up by gems/rails
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: { sessions: 'users/sessions', registrations: 'users/registrations' }
 
   # Routes set up by models
   resources :users, only: [:show]
