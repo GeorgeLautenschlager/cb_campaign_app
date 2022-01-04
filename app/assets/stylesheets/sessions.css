@@ -1,0 +1,21 @@
+body {
+  background: no-repeat url("collage_background.png");
+  background-size: 100%;
+  background-color: rgb(153, 153, 153);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-box {
+  background-color: rgb(153, 153, 153);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: "Courier New";
+  text-align: center;
+  margin-top: 75px;
+}
+
+.fnf-logo {
+  max-width: 500px;
+}
