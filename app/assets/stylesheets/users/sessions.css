@@ -1,5 +1,5 @@
 body {
-  background: no-repeat url("collage_background.png");
+  background: no-repeat url('<%= asset_path("collage_background.png") %>');
   background-size: 100%;
   background-color: rgb(153, 153, 153);
   display: flex;
@@ -18,8 +18,4 @@ body {
 
 .fnf-logo {
   max-width: 500px;
-}
-
-.fuck{
-  
 }
