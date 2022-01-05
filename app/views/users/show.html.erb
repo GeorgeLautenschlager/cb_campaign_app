@@ -5,9 +5,13 @@
   </h1>
 
   <div>
-    TODO:
     <ul>
-      <li>Assigned Pilot</li>
+      <li>
+        Allied Pilot: <%= current_user.allied_pilot.to_s %>
+      </li>
+      <li>
+        Axis Pilot: <%= current_user.axis_pilot.to_s %>
+      </li>
       <li>Assigned Cards</li>
     </ul>
   </div>
