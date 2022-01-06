@@ -4,7 +4,6 @@ class User < ApplicationRecord
 
   has_one :allied_pilot, dependent: :destroy 
   has_one :axis_pilot, dependent: :destroy
-  # has_many :cards
 
   after_create :assign_pilots!
 
