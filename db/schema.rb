@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_05_072551) do
+ActiveRecord::Schema.define(version: 2022_01_06_080405) do
+
+  create_table "card_templates", force: :cascade do |t|
+    t.string "description"
+    t.string "details"
+    t.string "category"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cards", force: :cascade do |t|
+    t.integer "card_template_id"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "pilots", force: :cascade do |t|
     t.string "first_name"
