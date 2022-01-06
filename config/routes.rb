@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   # Routes set up by models
   resources :users, only: [:show]
+
+  get 'users/:id/mulligan', to: 'users#mulligan', as: :mulligan
 end
