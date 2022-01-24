@@ -22,6 +22,6 @@ class User < ApplicationRecord
   end
 
   def deal_new_hand!
-    update!(cards: Card.deal_new_hand)
+    # update!(cards: Card.deal_new_hand)
   end
 end

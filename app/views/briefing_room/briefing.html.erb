@@ -1,0 +1,12 @@
+<div>
+  <map name="briefing-nav">
+    <area shape="rect" coords="10,335,221,638"
+          href="<%= roster_path %>" />
+    <area shape="rect" coords="208,191,768,548"
+          href="<%= map_path %>" />
+    <area shape="rect" coords="1095,378,1338,689"
+          href="<%= stats_path %>" />
+  </map>
+
+  <%= image_tag asset_path("HOME_PAGE-standard-height-2550px-gigapixel.png"), id: 'briefing', usemap: "#briefing-nav" %>
+</div>
