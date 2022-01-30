@@ -10,14 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_080405) do
+ActiveRecord::Schema.define(version: 2022_01_29_011514) do
 
   create_table "card_templates", force: :cascade do |t|
-    t.string "description"
-    t.string "details"
-    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "coalition"
+    t.string "nationality"
+    t.string "title"
+    t.string "mission_description_text"
+    t.string "flavour_text"
+    t.string "targets"
+    t.string "target_values"
+    t.string "airfield"
+    t.string "plane"
+    t.integer "loadout"
+    t.integer "death_percentage"
+    t.integer "capture_percentage"
+    t.string "area_of_operation"
   end
 
   create_table "cards", force: :cascade do |t|

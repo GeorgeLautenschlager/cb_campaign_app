@@ -1,15 +1,20 @@
+require 'csv'
+
 class MissionCards::DeckGenerator
   # Class Methods
   def self.sync_card_templates!
     # TODO: write some tests for this
-    gdrive_adaptor = GoogleDriveAdapter.new
-    card_template_rows = gdrive_adaptor.mission_card_lines
+    card_template_rows = CSV.read './static_data/card_templates.csv'
+    # Remove first header row
+    card_template_rows.shift
 
-    hash_keys = card_template_rows.shift
+    # Turn the rows into attributes hashes
+    hash_keys = card_template_rows.shift.map { |key| key.downcase.parameterize.underscore.to_sym }
     new_card_templates = card_template_rows.map do |row|
-      hash_keys.zip row
+      hash_keys.zip(row).to_h
     end
 
+    # Wipe the existing templates and commit the new ones
     ActiveRecord::Base.transaction do
       CardTemplate.delete_all
       CardTemplate.insert_all(new_card_templates)
@@ -33,5 +38,6 @@ class MissionCards::DeckGenerator
     # - create a bunch of models (barebones is fine for now, you just need the relationships and maybe names (for pilots, airforces, squads, etc.))
     # - DeckGenerator
     # - Dealer
+    # - bump version to 3.1.0
   end
 end

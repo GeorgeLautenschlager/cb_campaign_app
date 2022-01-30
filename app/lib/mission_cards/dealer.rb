@@ -1,4 +1,4 @@
-class Dealer
+class MissionCards::Dealer
   HAND_LIMIT = 5
 
   def deal_hands!
