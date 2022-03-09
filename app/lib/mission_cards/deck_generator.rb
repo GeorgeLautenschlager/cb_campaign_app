@@ -1,6 +1,7 @@
 require 'csv'
 
 class MissionCards::DeckGenerator
+
   # Class Methods
   def self.sync_card_templates!
     # TODO: write some tests for this
@@ -21,9 +22,20 @@ class MissionCards::DeckGenerator
     end
   end
 
+  # def initialize(airforce)
+  #   @airforce = airforce
+  # end
+
   # Instance Methods
   def generate!
     "I'll do it this afternoon!"
+
+    # airforce_templates = CardTemplate.where(airforce: @airforce)
+
+    # rename nationality to airforce
+    # create airforce
+    # load deck config
+    # filter cards by: available target
 
     # phase 1 - get all the templates, populate them at random, truncate cards and repopulate
     # phase 2 - deck size is an attr, templates are filtered by inputs to the DeckGenerator
@@ -33,11 +45,8 @@ class MissionCards::DeckGenerator
     # and validations in the pilot class is what maintains the illusion of a "hand"
 
     # Next Actions:
-    # - Google Drive Oauth
-    # - tests for template sync
     # - create a bunch of models (barebones is fine for now, you just need the relationships and maybe names (for pilots, airforces, squads, etc.))
     # - DeckGenerator
     # - Dealer
-    # - bump version to 3.1.0
   end
 end

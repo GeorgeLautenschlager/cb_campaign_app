@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_29_011514) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_09_031229) do
+  create_table "airforces", force: :cascade do |t|
+    t.string "name"
+    t.string "nationality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "airforces_card_templates", id: false, force: :cascade do |t|
+    t.integer "airforce_id", null: false
+    t.integer "card_template_id", null: false
+  end
 
   create_table "card_templates", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "coalition"
-    t.string "nationality"
+    t.string "airforce"
     t.string "title"
     t.string "mission_description_text"
     t.string "flavour_text"
@@ -33,8 +44,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_011514) do
   create_table "cards", force: :cascade do |t|
     t.integer "card_template_id"
     t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pilots", force: :cascade do |t|
@@ -42,8 +53,8 @@ ActiveRecord::Schema.define(version: 2022_01_29_011514) do
     t.string "last_name"
     t.integer "user_id"
     t.string "type"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_pilots_on_user_id"
   end
 
@@ -51,10 +62,10 @@ ActiveRecord::Schema.define(version: 2022_01_29_011514) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
