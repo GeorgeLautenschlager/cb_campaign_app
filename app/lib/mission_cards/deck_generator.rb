@@ -56,11 +56,11 @@ class MissionCards::DeckGenerator
   end
 
   def actionable_targets(coalition)
-    deck_config[coalition]["targets"]
+    deck_config[coalition]["targets"].map { |target| target["type"] }
   end
 
   def actionable_planes(airforce)
-    
+    deck_config[coalition]["planes"].map { |plane| target["type"] }
   end
 
   def opposing_coalition(coalition)
@@ -95,10 +95,7 @@ class MissionCards::DeckGenerator
   private def actionable_card_templates(coalition)
     templates = CardTemplate.where(
       coalition: coalition.to_s,
-      targets: deck_config[coalition][:targets]
-    ).or(CardTemplate.where(
-      coalition: coalition.to_s,
-      conditional: false
-    ))
+      targets: actionable_targets
+    )
   end
 end
