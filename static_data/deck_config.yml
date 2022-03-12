@@ -18,8 +18,6 @@ allies:
     - type: "p47d22"
       loadouts: "1..10"
       airfields:
-        - name: "B-78 Eindhoven FSP"
-          airforce: "RAF"
         - name: "Y-29 Asch FSP"
           airforce: "USAAF"
     - type: "spitfiremkixe"
@@ -27,17 +25,17 @@ allies:
       airfields:
         - name: "B-78 Eindhoven FSP"
           airforce: "RAF"
-        - name: "Y-29 Asch FSP"
-          airforce: "USAAF"
     - type: "p38j25"
       loadouts: "1..10"
       airfields:
         - name: "B-78 Eindhoven BSP"
-          airforce: "RAF"
+          airforce: "USAAF"
     - type: "a20b"
       loadoots: "1..10"
       airfields:
         - name: "B-78 Eindhoven BSP"
           airforce: "USAAF"
+        - name: "B-78 Eindhoven BSP"
+          airforce: "RAF"
   
         

@@ -38,6 +38,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "sqlite3", "~> 1.4"
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
@@ -49,6 +51,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  gem 'database_cleaner-active_record'
 end
 
 # DEFAULT GEMS ABOVE
