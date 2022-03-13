@@ -21,7 +21,8 @@ describe MissionCards::DeckGenerator do
     end
 
     it 'provides available planes' do
-      expect(subject.available_planes(raf)).to match_array ['p51d15', 'spitfiremkixe', 'a20b']
+      available_planes = subject.available_planes(raf).map { |plane_config| plane_config['type'] }
+      expect(available_planes).to match_array ['p51d15', 'spitfiremkixe', 'a20b']
     end
   end
 

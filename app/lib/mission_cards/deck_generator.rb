@@ -53,9 +53,9 @@ class MissionCards::DeckGenerator
 
   def available_planes(airforce)
     deck_config[airforce.coalition]['planes'].select do |plane_config|
-      plane_config['airfields'].any? { |airfield_config| airfield_config['airforce'].downcase == airforce.name.downcase }
-    end.map do |plane_config| 
-      plane_config['type']
+      plane_config['airfields'].any? do |airfield_config|
+        airfield_config['airforce'].downcase == airforce.name.downcase
+      end
     end
   end
 
@@ -83,13 +83,28 @@ class MissionCards::DeckGenerator
     # Phase 1:
     # Just populate the "deck" with all the actionable templates
 
-    # actionable_card_templates.each do |template|
-    #   create_card(template)
-    # end
+    actionable_card_templates.each do |template|
+      create_card!(template)
+    end
   end
 
   # TODO: maybe this should get farmed out into it's own deal
-  # def create_card!(template)
-  #   Card.create(card_template: template)
-  # end
+  def create_card!(template)
+    # TODO: consider a more elaborate data structure, one that maps config elements to templates
+    # this would save the effort of looking things up again.
+
+    # ********** START HERE  **********
+    # Even better, maybe walk the deck config and generate as you go.
+    deck_config["allies"]['targets'].each do |target|
+      # create a card for this target
+      # This might fall apart here, because I still may need to do a bunch of iteration to cross reference
+      # this created cards with the available planes/airfields
+      # maybe extending the deck config will help?
+    end 
+
+    # find available planes that match this template. Create cards for each combination
+    # of plane, airfield and AO
+    
+    Card.create(card_template: template)
+  end
 end
