@@ -7,6 +7,9 @@ allies:
     - type: "industrial buildings"
       areas_of_operation:
         - "Cologne Marshaling Yard"
+    - type: "trains"
+      area_of_operation:
+        - "Cologne Marshaling Yard"
   planes: 
     - type: "p51d15"
       loadouts: "1..10"

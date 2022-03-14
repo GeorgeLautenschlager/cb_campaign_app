@@ -37,7 +37,7 @@ axis,Luftwaffe,Fuel Level Bomb,Destroy enemy fuel tanks in <AO>.,,fuel storage,x
 allies,RAF,Bridge Level Bomb,Destroy the bridge at <AO>.,,bridges,x4,,,,bomber,,,,
 allies,USAAF,Bridge Level Bomb,Destroy the bridge at <AO>.,,bridges,x4,,,,bomber,,,,
 axis,Luftwaffe,Bridge Level Bomb,Destroy the bridge at <AO>.,,bridges,x4,,,,bomber,,,,
-allies,RAF,Train Yard Level Bomb,Destroy any Train Locomotives in <AO>.,,tanks,x2,,,,bomber,,,,
+allies,RAF,Train Yard Level Bomb,Destroy any Train Locomotives in <AO>.,,trains,x2,,,,bomber,,,,
 allies,USAAF,Train Yard Level Bomb,Destroy any Train Locomotives in <AO>.,,trains,x2,,,,bomber,,,,
 axis,Luftwaffe,Train Yard Level Bomb,Destroy any Train Locomotives in <AO>.,,trains,x2,,,,bomber,,,,
 allies,RAF,Ship Level Bomb,Bombard any ships at <AO>.,,ships,x3,,,,bomber,,,,

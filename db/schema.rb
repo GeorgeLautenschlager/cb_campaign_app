@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_12_221424) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_14_040201) do
   create_table "airforces", force: :cascade do |t|
     t.string "name"
     t.string "coalition"
@@ -48,6 +48,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_12_221424) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "coalition"
+    t.string "airforce"
+    t.string "title"
+    t.string "mission_description_text"
+    t.string "flavour_text"
+    t.string "targets"
+    t.string "target_values"
+    t.string "airfield"
+    t.string "plane"
+    t.integer "loadout"
+    t.integer "death_percentage"
+    t.integer "capture_percentage"
+    t.string "area_of_operation"
   end
 
   create_table "pilots", force: :cascade do |t|

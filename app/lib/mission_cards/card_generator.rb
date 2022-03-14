@@ -1,30 +1,44 @@
 class MissionCards::CardGenerator
-  attr_reader :template
-  attr_reader :available_planes
-  attr_reader :actionable_targets
+  attr_reader :template, :available_planes, :actionable_targets, :user
 
-  def initialize(template, available_planes, actionable_targets)
+  def initialize(template, available_planes, actionable_targets, user)
     @template = template
     @available_planes = available_planes
     @actionable_targets = actionable_targets
+    @user = user
   end
 
-  def populate_and_save!
-    new_card = Card.new
+  def generate_cards!
+    new_cards = []
+    # TODO: user should be pilot!
+    plane_options.each do |plane_option|
+      areas_of_operation.each do |area_of_operation|
+        plane_option["airfields"].each do |airfield|
+          attrs = {
+            plane: plane_option["type"],
+            airfield: airfield["name"],
+            death_percentage: 10,
+            capture_percentage: 10,
+            loadout: 1,
+            area_of_operation: area_of_operation,
+            card_template: template,
+            user: user
+          }.merge(template.attributes.slice(
+            "coalition",
+            "airforce",
+            "title",
+            "mission_description_text",
+            "flavour_text",
+            "targets",
+            "target_values"
+          ))
+          
+          new_cards << Card.create!(attrs)
+        end
+      end
+    end
 
-    # TODO: iterate through all the options of plane and airfield
-    plane_config = plane_options.first
-    new_card.plane = plane_config["type"]
-    new_card.airfield = plane_config["airfields"].first
-    
-    new_card.death_percentage = 10
-    new_card.capture_percentage = 10
-
-    # TODO: Select loadout
-    new_card.loadout = 1
-
-    # TODO: select AO
-    new_card.area_of_operation = "Gladbach Defences"
+    new_cards
   end
 
   def plane_options
@@ -34,5 +48,18 @@ class MissionCards::CardGenerator
       template.plane.split(',').map(&:strip).any? { |role| plane.send("#{role}?".to_sym) } &&
       plane_config["airfields"].any? { |airfield| airfield["airforce"] == template.airforce}
     end
+  end
+
+  def areas_of_operation
+    if template.targets == "fighters"
+      actionable_targets.map {|target_config| target_config["areas_of_operation"]}
+    elsif template.targets == "bombers" || template.targets == "attackers"
+      # TODO: get friendly targets
+      []
+    else
+      actionable_targets.select do |target_config|
+        template.targets.include? target_config["type"]
+      end.map {|target_config| target_config["areas_of_operation"]}
+    end.flatten.uniq
   end
 end
