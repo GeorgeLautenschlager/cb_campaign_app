@@ -1,4 +1,5 @@
 describe MissionCards::CardGenerator do
+  # TODO: cards should not require a user
   subject { MissionCards::CardGenerator.new(card_template, available_planes, actionable_targets, user) }
 
   let(:available_planes) do

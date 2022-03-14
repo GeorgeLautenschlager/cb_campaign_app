@@ -1,4 +1,3 @@
-size: 60
 allies:
   targets:
     - type: "ground units"

@@ -22,29 +22,9 @@ class MissionCards::DeckGenerator
       CardTemplate.insert_all(new_card_templates)
     end
   end
-
-  # Instance Methods
-  
-  # TODO: clean this up
-  # phase 1 - get all the templates, populate them at random, truncate cards and repopulate
-  # phase 2 - deck size is an attr, templates are filtered by inputs to the DeckGenerator
-  # phase 3 - stabilize set of inputs
-
-  # On cards: the 'deck' is simply the extant set of Card records for a given air force, a has_and_belongs_to_many relationship
-  # and validations in the pilot class is what maintains the illusion of a 'hand'
-
-  # Next Actions:
-  # - create a bunch of models (barebones is fine for now, you just need the relationships and maybe names (for pilots, airforces, squads, etc.))
-  # - DeckGenerator
-  # - Dealer
-  # - bump version to 3.1.0
   
   def initialize
     @deck_config = YAML.load_file './static_data/deck_config.yml'
-  end
-
-  def deck_limit
-    deck_config['size']
   end
 
   def actionable_targets(coalition)
@@ -59,8 +39,6 @@ class MissionCards::DeckGenerator
     end
   end
 
-  # TODO: add conditional flag, duration and weight to templates
-  # TODO: change nationality to airforce
   def actionable_card_templates(airforce)
     templates = CardTemplate.where(
       airforce: airforce.name,
@@ -84,27 +62,8 @@ class MissionCards::DeckGenerator
     # Just populate the "deck" with all the actionable templates
 
     actionable_card_templates.each do |template|
-      create_card!(template)
+      # card_gen = CardGenerator.new(template, available_planes, actionable_targets)
+      # card_gen.generate_cards!
     end
-  end
-
-  # TODO: maybe this should get farmed out into it's own deal
-  def create_card!(template)
-    # TODO: consider a more elaborate data structure, one that maps config elements to templates
-    # this would save the effort of looking things up again.
-
-    # ********** START HERE  **********
-    # Even better, maybe walk the deck config and generate as you go.
-    deck_config["allies"]['targets'].each do |target|
-      # create a card for this target
-      # This might fall apart here, because I still may need to do a bunch of iteration to cross reference
-      # this created cards with the available planes/airfields
-      # maybe extending the deck config will help?
-    end 
-
-    # find available planes that match this template. Create cards for each combination
-    # of plane, airfield and AO
-    
-    Card.create(card_template: template)
   end
 end
