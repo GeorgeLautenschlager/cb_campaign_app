@@ -1,6 +1,5 @@
 describe MissionCards::CardGenerator do
-  # TODO: cards should not require a user
-  subject { MissionCards::CardGenerator.new(card_template, available_planes, actionable_targets, user) }
+  subject { MissionCards::CardGenerator.new(card_template, available_planes, actionable_targets, pilot) }
 
   let(:available_planes) do
     [
@@ -51,8 +50,8 @@ describe MissionCards::CardGenerator do
     ]
   end
 
-  let(:user) do
-    User.create! email: "please_make_me@a_pilot.com", password: "but later, I guess"
+  let(:pilot) do
+    create :pilot
   end
   
   # TODO: No but seriously, shared context plx unt thx

@@ -20,9 +20,29 @@ class Pilot < ApplicationRecord
     "#{first_name} #{last_name}"
   end
 
+  def allied?
+    false
+  end
+
+  def axis?
+    false
+  end
+
+  def raf?
+    false
+  end
+
+  def usaaf?
+    false
+  end
+
+  def luftwaffe?
+    false
+  end
+
   private
   def self.names_file_path(pilot, position)
-    path = 'lib/names/'
+    path = 'static_data/names/'
 
     if position == :first
       path.concat 'FirstNames'
@@ -32,8 +52,10 @@ class Pilot < ApplicationRecord
       raise ArgumentError, 'Unrecognized value for position.'
     end
 
-    if pilot.allied?
+    if pilot.usaaf?
       path.concat 'USA.txt'
+    elsif pilot.raf?
+      path.concat 'Britain.txt'
     else
       path.concat 'Germany.txt'
     end

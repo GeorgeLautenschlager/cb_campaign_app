@@ -2,26 +2,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :allied_pilot, dependent: :destroy 
-  has_one :axis_pilot, dependent: :destroy
+  has_one :raf_pilot, dependent: :destroy 
+  has_one :usaaf_pilot, dependent: :destroy
+  has_one :luftwaffe_pilot, dependent: :destroy
   has_many :cards, dependent: :destroy
 
-  # after_create :assign_pilots!, :deal_new_hand!
+  after_create :assign_pilots!
 
-  # def assign_pilots!
-  #   update!(allied_pilot: AlliedPilot.new)
-  #   update!(axis_pilot: AxisPilot.new)
-  # end
-
-  # def kill_allied_pilot!
-  #   update!(allied_pilot: AlliedPilot.new)
-  # end
-
-  # def kill_axis_pilot
-  #   update!(axis_pilot: AxisPilot.new)
-  # end
-
-  # def deal_new_hand!
-  #   # update!(cards: Card.deal_new_hand)
-  # end
+  def assign_pilots!
+    update! raf_pilot: RafPilot.new
+    update! usaaf_pilot: UsaafPilot.new
+    update! luftwaffe_pilot: LuftwaffePilot.new
+  end
 end

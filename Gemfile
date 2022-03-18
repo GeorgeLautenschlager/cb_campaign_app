@@ -55,11 +55,13 @@ group :development do
   gem 'database_cleaner-active_record'
 end
 
-# DEFAULT GEMS ABOVE
-
 gem 'devise'
 gem 'bootstrap'
 
 group :production do
   gem 'pg'
+end
+
+group :test do
+  gem 'factory_bot_rails'
 end
