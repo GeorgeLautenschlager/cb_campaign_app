@@ -1,11 +1,10 @@
 class MissionCards::CardGenerator
-  attr_reader :template, :available_planes, :actionable_targets, :pilot
+  attr_reader :template, :available_planes, :actionable_targets
 
-  def initialize(template, available_planes, actionable_targets, pilot)
+  def initialize(template, available_planes, actionable_targets)
     @template = template
     @available_planes = available_planes
     @actionable_targets = actionable_targets
-    @pilot = pilot
   end
 
   def generate_cards!
@@ -20,8 +19,7 @@ class MissionCards::CardGenerator
             capture_percentage: 10,
             loadout: 1,
             area_of_operation: area_of_operation,
-            card_template: template,
-            pilot: pilot,
+            card_template: template
           }.merge(template.attributes.slice(
             "coalition",
             "airforce",

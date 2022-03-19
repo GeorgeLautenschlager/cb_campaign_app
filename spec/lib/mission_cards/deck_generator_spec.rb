@@ -12,12 +12,8 @@ describe MissionCards::DeckGenerator do
   end
 
   describe 'loading deck config' do
-    it 'specifies the size of the deck' do
-      expect(subject.deck_limit).to eq 60
-    end
-
     it 'provides actionable targets' do
-      expect(subject.actionable_targets('allies')).to match_array ['ground units', 'industrial buildings']
+      expect(subject.actionable_targets('allies')).to match_array ['ground units', 'industrial buildings', 'trains']
     end
 
     it 'provides available planes' do
@@ -33,7 +29,9 @@ describe MissionCards::DeckGenerator do
         "Factory Strike",
         "Fighter Bomber Attack",
         "Industrial Attack",
-        "Industrial Level Bomb"
+        "Industrial Level Bomb",
+        "Train Hunter",
+        "Train Yard Level Bomb",
       ]
     end
   end

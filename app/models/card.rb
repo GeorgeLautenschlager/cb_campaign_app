@@ -1,6 +1,5 @@
 class Card < ApplicationRecord
   belongs_to :card_template
-  belongs_to :pilot
 
   def self.deal_new_hand
     ['goal', 'modifier', 'buff'].map do |category|

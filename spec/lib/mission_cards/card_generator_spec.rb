@@ -1,5 +1,5 @@
 describe MissionCards::CardGenerator do
-  subject { MissionCards::CardGenerator.new(card_template, available_planes, actionable_targets, pilot) }
+  subject { MissionCards::CardGenerator.new(card_template, available_planes, actionable_targets) }
 
   let(:available_planes) do
     [
@@ -48,10 +48,6 @@ describe MissionCards::CardGenerator do
       {"type"=>"industrial buildings", "areas_of_operation"=>["Cologne Marshaling Yard"]},
       {"type"=>"trains", "areas_of_operation"=>["Cologne Marshaling Yard"]},
     ]
-  end
-
-  let(:pilot) do
-    create :pilot
   end
   
   # TODO: No but seriously, shared context plx unt thx
