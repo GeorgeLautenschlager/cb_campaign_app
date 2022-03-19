@@ -5,10 +5,8 @@ describe MissionCards::DeckGenerator do
     MissionCards::DeckGenerator.sync_card_templates!
   end
 
-  let (:raf) do    
-    # TODO: fixtures for static data? Probably a shared context is better...
-    # TODO: FactoryBot
-    Airforce.create(name: 'RAF', coalition: 'allies')
+  let (:raf) do
+    create :airforce, :raf
   end
 
   describe 'loading deck config' do
