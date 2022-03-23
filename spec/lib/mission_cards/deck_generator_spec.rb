@@ -11,7 +11,9 @@ describe MissionCards::DeckGenerator do
 
   describe 'loading deck config' do
     it 'provides actionable targets' do
-      expect(subject.actionable_targets('allies')).to match_array ['ground units', 'industrial buildings', 'trains']
+      # TODO: All this faffing about with types would be alleviated with... objects.
+      attackable_targets = subject.attackable_targets('allies').map { |target_config| target_config['type'] }
+      expect(attackable_targets).to match_array ['ground units', 'industrial buildings', 'trains']
     end
 
     it 'provides available planes' do

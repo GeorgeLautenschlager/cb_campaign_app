@@ -1,10 +1,13 @@
 class MissionCards::CardGenerator
-  attr_reader :template, :available_planes, :actionable_targets
+  attr_reader :template, :available_planes, :attackable_targets, :defendable_targets
 
-  def initialize(template, available_planes, actionable_targets)
+  def initialize(template, deck_generator)
     @template = template
-    @available_planes = available_planes
-    @actionable_targets = actionable_targets
+
+    airforce = Airforce.find_by(name: template.airforce)
+    @available_planes = deck_generator.available_planes(airforce)
+    @attackable_targets = deck_generator.attackable_targets(airforce.coalition)
+    @defendable_targets = deck_generator.defendable_targets(airforce.coalition)
   end
 
   def generate_cards!
@@ -49,12 +52,15 @@ class MissionCards::CardGenerator
 
   def areas_of_operation
     if template.targets == "fighters"
-      actionable_targets.map {|target_config| target_config["areas_of_operation"]}
-    elsif template.targets == "bombers" || template.targets == "attackers"
-      # TODO: get friendly targets
-      []
+      attackable_targets.map {|target_config| target_config["areas_of_operation"]}
+    elsif template.targets == "bombers" || template.targets == "attackers" || template.defend == 'all ground targets'
+      defendable_targets.map {|target_config| target_config["areas_of_operation"]}
+    elsif template.defend.present?
+      defendable_targets.select do |target_config|
+        template.defend.include? target_config["type"]
+      end.map {|target_config| target_config["areas_of_operation"]} 
     else
-      actionable_targets.select do |target_config|
+      attackable_targets.select do |target_config|
         template.targets.include? target_config["type"]
       end.map {|target_config| target_config["areas_of_operation"]}
     end.flatten.uniq

@@ -40,6 +40,7 @@ class MissionCards::Plane
     'bf110e2',
   ]
 
+  # TODO: Missing Ju87
   ATTACKERS = [
     'p47d22',
     'p47d28',

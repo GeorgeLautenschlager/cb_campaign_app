@@ -7,7 +7,7 @@ allies:
       areas_of_operation:
         - "Cologne Marshaling Yard"
     - type: "trains"
-      area_of_operation:
+      areas_of_operation:
         - "Cologne Marshaling Yard"
   planes: 
     - type: "p51d15"
@@ -36,8 +36,32 @@ allies:
       loadoots: "1..10"
       airfields:
         - name: "B-78 Eindhoven BSP"
-          airforce: "USAAF"
-        - name: "B-78 Eindhoven BSP"
           airforce: "RAF"
-  
-        
+axis:
+  targets:
+    - type: "tanks"
+      areas_of_operation: 
+        - "5th Armored"
+    - type: "ground units"
+      areas_of_operation:
+        - "101st Airborne"
+  planes: 
+    - type: "fw190a8"
+      loadouts: "1..10"
+      airfields:
+        - name: "Odendorf"
+          airforce: "Luftwaffe"
+        - name: "Kelz"
+          airforce: "Luftwaffe"
+    - type: "bf109g14"
+      loadouts: "1..10"
+      airfields:
+        - name: "Odendorf"
+          airforce: "Luftwaffe"
+        - name: "Kelz"
+          airforce: "Luftwaffe"
+    - type: "he111h16"
+      loadouts: "1..10"
+      airfields:
+        - name: "Ulmen Air Spawn"
+          airforce: "Luftwaffe"

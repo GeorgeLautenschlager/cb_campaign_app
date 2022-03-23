@@ -22,13 +22,22 @@ class MissionCards::DeckGenerator
       CardTemplate.insert_all(new_card_templates)
     end
   end
+
+  def self.opposite_coalition(coalition)
+    return "axis" if coalition == "allies"
+    "allies"
+  end
   
   def initialize
     @deck_config = YAML.load_file './static_data/deck_config.yml'
   end
 
-  def actionable_targets(coalition)
-    deck_config[coalition]['targets'].map { |target| target['type'] }
+  def attackable_targets(coalition)
+    deck_config[coalition]['targets']
+  end
+
+  def defendable_targets(coalition)
+    deck_config[self.class.opposite_coalition(coalition)]['targets']
   end
 
   def available_planes(airforce)
@@ -42,7 +51,7 @@ class MissionCards::DeckGenerator
   def actionable_card_templates(airforce)
     templates = CardTemplate.where(
       airforce: airforce.name,
-      targets: actionable_targets(airforce.coalition)
+      targets: attackable_targets(airforce.coalition).map { |target| target['type'] }
     )
   end
 
@@ -62,7 +71,7 @@ class MissionCards::DeckGenerator
     # Just populate the "deck" with all the actionable templates
 
     actionable_card_templates.each do |template|
-      # card_gen = CardGenerator.new(template, available_planes, actionable_targets)
+      # card_gen = CardGenerator.new(template, self)
       # card_gen.generate_cards!
     end
   end

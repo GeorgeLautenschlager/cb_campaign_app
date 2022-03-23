@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_19_000210) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_22_031145) do
   create_table "airforces", force: :cascade do |t|
     t.string "name"
     t.string "coalition"
@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_19_000210) do
     t.string "area_of_operation"
     t.string "always_in_hand"
     t.integer "weight"
+    t.string "defend"
   end
 
   create_table "cards", force: :cascade do |t|
