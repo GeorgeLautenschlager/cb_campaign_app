@@ -56,12 +56,9 @@ class MissionCards::DeckGenerator
   end
 
   def generate!
-    [:allies, :axis].each do |coalition|
-      actionable_templates_for_coalition = actionable_card_templates coalition
-      coalition.airforces.each do |airforce|
-        generate_for_airforce!(airforce)
-      end
-    end
+    Airforce.all.map do |airforce|
+      generate_for_airforce!(airforce)
+    end.flatten
   end
 
   def generate_for_airforce!(airforce)
