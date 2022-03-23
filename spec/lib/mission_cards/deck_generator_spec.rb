@@ -35,4 +35,42 @@ describe MissionCards::DeckGenerator do
       ]
     end
   end
+
+  describe '#generate_for_airforce!' do
+    it 'populates the cards table' do
+      cards = subject.generate_for_airforce!(raf)
+      result = cards.map { |card| [card.title, card.area_of_operation, card.airfield, card.plane] }
+
+      expect(result).to match_array [
+        ["Factory Strike", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "p51d15"],
+        ["Factory Strike", "Cologne Marshaling Yard", "Y-29 Asch FSP", "p51d15"],
+        ["Factory Strike", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Factory Strike", "Cologne Marshaling Yard", "B-78 Eindhoven BSP", "a20b"],
+        ["Industrial Attack", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "p51d15"],
+        ["Industrial Attack", "Cologne Marshaling Yard", "Y-29 Asch FSP", "p51d15"],
+        ["Industrial Attack", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Industrial Attack", "Cologne Marshaling Yard", "B-78 Eindhoven BSP", "a20b"],
+        ["Train Hunter", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "p51d15"],
+        ["Train Hunter", "Cologne Marshaling Yard", "Y-29 Asch FSP", "p51d15"],
+        ["Train Hunter", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Train Hunter", "Cologne Marshaling Yard", "B-78 Eindhoven BSP", "a20b"],
+        ["Fighter Bomber Attack", "Gladbach Defences", "B-78 Eindhoven FSP", "p51d15"],
+        ["Fighter Bomber Attack", "Gladbach Defences", "Y-29 Asch FSP", "p51d15"],
+        ["Fighter Bomber Attack", "Gladbach Defences", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Fighter Bomber Attack", "Gladbach Defences", "B-78 Eindhoven BSP", "a20b"],
+        ["Industrial Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "p51d15"],
+        ["Industrial Level Bomb", "Cologne Marshaling Yard", "Y-29 Asch FSP", "p51d15"],
+        ["Industrial Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Industrial Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven BSP", "a20b"],
+        ["Train Yard Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "p51d15"],
+        ["Train Yard Level Bomb", "Cologne Marshaling Yard", "Y-29 Asch FSP", "p51d15"],
+        ["Train Yard Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Train Yard Level Bomb", "Cologne Marshaling Yard", "B-78 Eindhoven BSP", "a20b"],
+        ["Close Air Support", "Gladbach Defences", "B-78 Eindhoven FSP", "p51d15"],
+        ["Close Air Support", "Gladbach Defences", "Y-29 Asch FSP", "p51d15"],
+        ["Close Air Support", "Gladbach Defences", "B-78 Eindhoven FSP", "spitfiremkixe"],
+        ["Close Air Support", "Gladbach Defences", "B-78 Eindhoven BSP", "a20b"]
+      ]
+    end
+  end
 end

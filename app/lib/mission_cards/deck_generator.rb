@@ -65,14 +65,9 @@ class MissionCards::DeckGenerator
   end
 
   def generate_for_airforce!(airforce)
-    actionable_card_templates(airforce)
-
-    # Phase 1:
-    # Just populate the "deck" with all the actionable templates
-
-    actionable_card_templates.each do |template|
-      # card_gen = CardGenerator.new(template, self)
-      # card_gen.generate_cards!
-    end
+    actionable_card_templates(airforce).map do |template|
+      card_gen = MissionCards::CardGenerator.new(template, self)
+      card_gen.generate_cards!
+    end.flatten
   end
 end

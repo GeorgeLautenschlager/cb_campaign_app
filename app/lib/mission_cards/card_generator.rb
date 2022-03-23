@@ -44,9 +44,10 @@ class MissionCards::CardGenerator
   def plane_options
     available_planes.select do |plane_config|
       plane = MissionCards::Plane.new(plane_config["type"])
-      
-      template.plane.split(',').map(&:strip).any? { |role| plane.send("#{role}?".to_sym) } &&
-      plane_config["airfields"].any? { |airfield| airfield["airforce"] == template.airforce}
+      template.plane.present? &&
+        template.plane.split(',').map(&:strip).any? { |role| plane.send("#{role}?".to_sym) } ||
+        template.plane.nil? &&
+        plane_config["airfields"].any? { |airfield| airfield["airforce"] == template.airforce}
     end
   end
 
