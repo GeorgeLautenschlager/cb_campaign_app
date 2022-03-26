@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_one :raf_pilot, dependent: :destroy 
   has_one :usaaf_pilot, dependent: :destroy
   has_one :luftwaffe_pilot, dependent: :destroy
+  has_one :vvs_pilot, dependent: :destroy
+
   has_many :cards, dependent: :destroy
 
   after_create :assign_pilots!
@@ -13,5 +15,6 @@ class User < ApplicationRecord
     update! raf_pilot: RafPilot.new
     update! usaaf_pilot: UsaafPilot.new
     update! luftwaffe_pilot: LuftwaffePilot.new
+    update! vvs_pilot: VvsPilot.new
   end
 end

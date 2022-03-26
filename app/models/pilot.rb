@@ -40,6 +40,14 @@ class Pilot < ApplicationRecord
     false
   end
 
+  def vvs?
+    false
+  end
+
+  def names_filename
+    raise NoMethodError
+  end
+
   private
   def self.names_file_path(pilot, position)
     path = 'static_data/names/'
@@ -52,12 +60,6 @@ class Pilot < ApplicationRecord
       raise ArgumentError, 'Unrecognized value for position.'
     end
 
-    if pilot.usaaf?
-      path.concat 'USA.txt'
-    elsif pilot.raf?
-      path.concat 'Britain.txt'
-    else
-      path.concat 'Germany.txt'
-    end
+    path.concat pilot.names_filename
   end
 end

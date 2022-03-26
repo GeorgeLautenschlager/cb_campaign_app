@@ -56,7 +56,7 @@ class MissionCards::DeckGenerator
   end
 
   def generate!
-    Cards.destroy_all
+    Card.destroy_all
     
     Airforce.all.map do |airforce|
       generate_for_airforce!(airforce)

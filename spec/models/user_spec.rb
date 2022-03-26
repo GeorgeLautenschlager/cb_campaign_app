@@ -17,11 +17,18 @@ describe User do
         expect(usaaf_pilot.usaaf?).to eq true
       end
 
-      it 'is assigned an Luftwaffe pilot' do
+      it 'is assigned a Luftwaffe pilot' do
         luftwaffe_pilot = subject.luftwaffe_pilot
 
         expect(luftwaffe_pilot).to_not be_nil
         expect(luftwaffe_pilot.luftwaffe?).to eq true
+      end
+
+      it 'is assigned a VVS pilot' do
+        vvs_pilot = subject.vvs_pilot
+
+        expect(vvs_pilot).to_not be_nil
+        expect(vvs_pilot.vvs?).to eq true
       end
     end
   end
