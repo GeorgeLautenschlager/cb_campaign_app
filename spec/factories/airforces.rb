@@ -17,4 +17,9 @@ FactoryBot.define do
     name { 'Luftwaffe' }
     coalition { 'axis' }
   end
+
+  trait :vvs do
+    name { 'VVS' }
+    coalition { 'allies' }
+  end
 end

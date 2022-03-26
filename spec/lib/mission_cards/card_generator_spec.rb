@@ -1,15 +1,8 @@
 describe MissionCards::CardGenerator do
+  include_context "app config"
+  
   subject { MissionCards::CardGenerator.new(card_template, deck_generator) }
   let (:deck_generator) { MissionCards::DeckGenerator.new }
-  
-  # TODO: No but seriously, shared context plx unt thx
-  before do
-    create :airforce, :raf
-    create :airforce, :usaaf
-    create :airforce, :luftwaffe
-    
-    MissionCards::DeckGenerator.sync_card_templates!
-  end
 
   describe "#plane_options" do
     context "for a level bombing mission" do

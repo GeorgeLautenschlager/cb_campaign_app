@@ -1,13 +1,7 @@
 describe MissionCards::DeckGenerator do
+  include_context "app config"
+
   subject { MissionCards::DeckGenerator.new }
-
-  before do
-    MissionCards::DeckGenerator.sync_card_templates!
-  end
-
-  let! (:raf) { create :airforce, :raf }
-  let! (:usaaf) { create :airforce, :usaaf }
-  let! (:luftwaffe) { create :airforce, :luftwaffe }
 
   describe 'loading deck config' do
     it 'provides actionable targets' do
