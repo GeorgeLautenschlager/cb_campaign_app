@@ -15,19 +15,34 @@ class MissionCards::DeckConfiguration
       ["Germany"].include? objective.Country.Name
     end
 
-    # TODO: at some point, category needs to get converted to a target type
     axis_targets = allied_objectives.map do |objective|
       objective.CampaignObjective.Blocks.map do |block|
-        block.Category
+        { block.Category => objective.Name }
       end
     end.flatten.uniq
 
     allied_targets = axis_objectives.map do |objective|
       objective.CampaignObjective.Blocks.map do |block|
-        block.Category
+        { block.Category => objective.Name }
       end
     end.flatten.uniq
 
+    allied_airframes = @proto_buff_data.Airfields.select do |objective|
+      ["United States", "Great Britain"].include? objective.Country.Name
+    end.map do |airfield|
+      { airfield.CampaignAirfield.AvailableAirframes.map(&:Model) => airfield.Name }
+    end.flatten.uniq
+
+    axis_airframes = @proto_buff_data.Airfields.select do |objective|
+      ["Germany"].include? objective.Country.Name
+    end.map do |airfield|
+      { airfield.CampaignAirfield.AvailableAirframes.map(&:Model) => airfield.Name }
+    end.flatten.uniq
+
     binding.pry
+
+    # TODO:
+    # - merge the above key value pairs into hashes
+    # - don't forget about loadouts, maybe compile a list of whole protobuf objects
   end
 end
