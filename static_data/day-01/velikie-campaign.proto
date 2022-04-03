@@ -1,24 +1,24 @@
 syntax = "proto3";
+package campaign_library.protobuf;
 
-message CampaignState {
-   string Name = 1;
-   repeated CampaignSupplyPoint Airfields = 2;
-   repeated CampaignSupplyPoint Objectives = 3;
-   CampaignFrontLine FrontLine = 4;
-   CampaignDay Day = 5;
-   CampaignPosition PlayAreaBoundaryNorthWest = 6;
-   CampaignPosition PlayAreaBoundarySouthEast = 7;
-}
 message CampaignAirfield {
    repeated CampaignBlock Blocks = 1;
+   repeated CampaignAvailableAirframe AvailableAirframes = 2;
+}
+message CampaignAvailableAirframe {
+   string Name = 1;
+   string Script = 2;
+   string Model = 3;
+   string AvMods = 4;
+   string AvSkins = 5;
+   string AvPayloads = 6;
 }
 message CampaignBlock {
    string Model = 1;
-   // How healthy, from 1.0 (pristine) to 0.0 (destroyed)
    double Health = 2;
-   // How many components in this model have been killed? (Basically the number of OnKilled events emitted so far by this block)
    int32 DestroyedComponents = 3;
    CampaignPosition Position = 4;
+   string Category = 5;
 }
 message CampaignCountry {
    string Name = 1;
@@ -28,7 +28,6 @@ message CampaignDay {
    int32 Year = 1;
    int32 Month = 2;
    int32 Day = 3;
-   // Which numeric day in the campaign is this?
    int32 DayInCampaign = 4;
 }
 message CampaignFrontLine {
@@ -49,13 +48,22 @@ message CampaignPosition {
    double Y = 2;
    double Z = 3;
 }
+message CampaignState {
+   string Name = 1;
+   repeated CampaignSupplyPoint Airfields = 2;
+   repeated CampaignSupplyPoint Objectives = 3;
+   CampaignFrontLine FrontLine = 4;
+   CampaignDay Day = 5;
+   CampaignPosition PlayAreaBoundaryNorthWest = 6;
+   CampaignPosition PlayAreaBoundarySouthEast = 7;
+   repeated CampaignBlock TemplatedBlocks = 8;
+}
 message CampaignSupplyPoint {
    string Name = 1;
    CampaignPosition Position = 2;
    CampaignCountry Country = 3;
    int32 SupplyLevel = 4;
    bool ActiveToday = 5;
-   // This is the Protobuf-Net generator doing subclasses. Does it work ok?
    oneof subtype {
       CampaignAirfield CampaignAirfield = 11;
       CampaignObjective CampaignObjective = 12;
