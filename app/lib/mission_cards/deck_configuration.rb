@@ -15,34 +15,50 @@ class MissionCards::DeckConfiguration
       ["Germany"].include? objective.Country.Name
     end
 
-    axis_targets = allied_objectives.map do |objective|
+    axis_targets = Hash.new { |h, k| h[k] = [] }
+    allied_objectives.each do |objective|
       objective.CampaignObjective.Blocks.map do |block|
-        { block.Category => objective.Name }
+        axis_targets[block.Category] << objective.Name
       end
-    end.flatten.uniq
+    end
+    axis_targets.transform_values! do |ao_list|
+      ao_list.uniq
+    end
 
-    allied_targets = axis_objectives.map do |objective|
+    allied_targets = Hash.new { |h, k| h[k] = [] }
+    axis_objectives.each do |objective|
       objective.CampaignObjective.Blocks.map do |block|
-        { block.Category => objective.Name }
+        allied_targets[block.Category] << objective.Name
       end
-    end.flatten.uniq
-
-    allied_airframes = @proto_buff_data.Airfields.select do |objective|
+    end
+    allied_targets.transform_values! do |ao_list|
+      ao_list.uniq
+    end
+    # TODO: loadouts
+    allied_airframes = Hash.new { |h, k| h[k] = [] }
+    @proto_buff_data.Airfields.select do |objective|
       ["United States", "Great Britain"].include? objective.Country.Name
-    end.map do |airfield|
-      { airfield.CampaignAirfield.AvailableAirframes.map(&:Model) => airfield.Name }
-    end.flatten.uniq
+    end.each do |airfield|
+      airfield.CampaignAirfield.AvailableAirframes.each do |airframe|
+        allied_airframes[airframe.Model.split('\\').last] << airfield.Name
+      end
+    end
+    allied_airframes.transform_values! do |airfield_list|
+      airfield_list.uniq
+    end
 
-    axis_airframes = @proto_buff_data.Airfields.select do |objective|
+    axis_airframes = Hash.new { |h, k| h[k] = [] }
+    @proto_buff_data.Airfields.select do |objective|
       ["Germany"].include? objective.Country.Name
-    end.map do |airfield|
-      { airfield.CampaignAirfield.AvailableAirframes.map(&:Model) => airfield.Name }
-    end.flatten.uniq
+    end.each do |airfield|
+      airfield.CampaignAirfield.AvailableAirframes.each do |airframe|
+        axis_airframes[airframe.Model.split('\\').last.split('.').first] << airfield.Name
+      end
+    end
+    axis_airframes.transform_values! do |airfield_list|
+      airfield_list.uniq
+    end
 
     binding.pry
-
-    # TODO:
-    # - merge the above key value pairs into hashes
-    # - don't forget about loadouts, maybe compile a list of whole protobuf objects
   end
 end
