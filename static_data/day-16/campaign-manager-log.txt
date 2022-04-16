@@ -1,0 +1,25 @@
+Processing days events for campaign day: 1944-06-15 (Day 15)
+New campaign day is 1944-06-16 (Day 16)
+Calculating front line with 20 segments, using 10m granularity
+Calculating supply flows amongst airfields and objectives
+Flowing supply from airfields to nearby supply points...
+Kuniya resupplies Zaluchie Shipping by 4
+Flowing supply from objectives to nearby supply points...
+Airfield Kochegarovo (United States) with supply 100 and 7,126m to the front line, assigned 5 airframes.
+Airfield Bulynino (Germany) with supply 100 and 5,692m to the front line, assigned 13 airframes.
+Airfield Nevel (United States) with supply 100 and 41,827m to the front line, assigned 14 airframes.
+Airfield Porechye (United States) with supply 100 and 10,791m to the front line, assigned 5 airframes.
+Airfield Kuniya (Germany) with supply 100 and 29,873m to the front line, assigned 13 airframes.
+Airfield Dvin Ye (Germany) with supply 100 and 27,730m to the front line, assigned 13 airframes.
+Airfield Drozdova (United States) with supply 100 and 57,900m to the front line, assigned 14 airframes.
+Airfield St Toropa (Germany) with supply 100 and 56,637m to the front line, assigned 13 airframes.
+Airfield Nasva (Great Britain) with supply 100 and 21,310m to the front line, assigned 7 airframes.
+Airfield Velikie Luki (Germany) with supply 100 and 13,218m to the front line, assigned 13 airframes.
+Airfield Toropets (Germany) with supply 100 and 69,050m to the front line, assigned 13 airframes.
+Airfield Zabel Ye (Great Britain) with supply 100 and 47,645m to the front line, assigned 12 airframes.
+Airfield Cherkizova (Germany) with supply 100 and 75,023m to the front line, assigned 13 airframes.
+Airfield Kovali (Germany) with supply 100 and 69,466m to the front line, assigned 13 airframes.
+Airfield Novo (Great Britain) with supply 100 and 19,138m to the front line, assigned 7 airframes.
+Calculated play area NW: (88811.4,0.0,8570.0)
+Calculated play area SE: (8811.4,0.0,108570.0)
+Calculated play center:  (48811.4,0.0,58570.0)

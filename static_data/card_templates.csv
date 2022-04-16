@@ -14,7 +14,7 @@ allies,USAAF,Bridge Attack,We must destroy the bridges at <AO> to halt the advan
 axis,Luftwaffe,Bridge Attack,We must destroy the bridges at <AO> to halt the advance of enemy forces.,,,bridges,x4,,,,,,,,
 allies,RAF,Train Hunter,Seek and destroy enemy train locomotives.,Train Pulse!,,trains,x2,,,,"fighter, attacker",,,,
 allies,USAAF,Train Hunter,Seek and destroy enemy train locomotives.,,,trains,x2,,,,"fighter, attacker",,,,
-axis,Luftwaffe,Train Hunter,Seek and destroy enemy train locomotives.,,,trains,x2,,,,fighter. attacker,,,,
+axis,Luftwaffe,Train Hunter,Seek and destroy enemy train locomotives.,,,trains,x2,,,,"fighter, attacker",,,,
 allies,RAF,Fighter Bomber Attack,Attack the target at <AO> and then provide air cover.,,,ground units,x2,TRUE,,,fighter,,,,
 allies,USAAF,Heavy Bomber Attack,Attack the target at <AO> and then provide air cover.,"If you can walk away from a landing, it’s a good landing. If you use the airplane the next day, it’s an outstanding landing.–Chuck Yeager",,ground units,x2,,,,bomber,,,,
 axis,Luftwaffe,Jabo Configuration Attack,Attack the target at <AO> and then provide air cover.,,,all units,x2,,,,fighter,bombs,,,

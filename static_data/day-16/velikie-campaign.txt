@@ -1,0 +1,409 @@
+Campaign 'velikie-campaign', on map Velikie, day 16, 1944-06-16
+Named loadouts for United States:
+            a20b - Slick - Bendix and 16 internal bombs, 16 bombs, 0 rockets
+          p38j25 - Alpha - 2x 500lb bombs, 6 rockets, 2 bombs, 6 rockets
+          p38j25 - Bravo - 6x 500lb bombs, 6 bombs, 0 rockets
+          p38j25 - Charlie - Heavy fighter mode, 0 bombs, 0 rockets
+          p47d22 - Alpha - Fighter mode with extra ammo, 0 bombs, 0 rockets
+          p47d22 - Triple Fives - 3x 500lb bombs, 3 bombs, 0 rockets
+          p47d22 - Big Bertha - 2x 500lb bombs, 1x 1000lb, 3 bombs, 0 rockets
+          p47d22 - Fully Loaded - 3x 500lb bombs, rockets, 3 bombs, 6 rockets
+           p51b5 - Rocketstang - Rockets, 0 bombs, 6 rockets
+           p51b5 - Bombstang - 2x 500lb bombs, 2 bombs, 0 rockets
+Named loadouts for Great Britain:
+            a20b - Slick - Bendix and 16 internal bombs, 16 bombs, 0 rockets
+          p47d22 - Alpha - Fighter mode with extra ammo, 0 bombs, 0 rockets
+          p47d22 - Triple Fives - 3x 500lb bombs, 3 bombs, 0 rockets
+          p47d22 - Big Bertha - 2x 500lb bombs, 1x 1000lb, 3 bombs, 0 rockets
+          p47d22 - Fully Loaded - 3x 500lb bombs, rockets, 3 bombs, 6 rockets
+           p51b5 - Rocketstang - Rockets, 0 bombs, 6 rockets
+           p51b5 - Bombstang - 2x 500lb bombs, 2 bombs, 0 rockets
+Named loadouts for Germany:
+     bf109g6late - Die Beule Jabo - jabo 250kb bomb with 30mm, 1 bombs, 0 rockets
+         fw190a8 - Anton - 30mm cannon, 0 bombs, 0 rockets
+         fw190a8 - Anton Jabo - 3x 250kg bombs, 3 bombs, 0 rockets
+         bf110g2 - Jagdbomber I - 2x 250kg bombs, 2 bombs, 0 rockets
+         bf110g2 - Jagdbomber II - 2x 500kg bombs, 2 bombs, 0 rockets
+         bf110g2 - Zerstoerer - 37mm cannon, 0 bombs, 0 rockets
+Airfields:
+  Kochegarovo, grid 0706, United States.  100 supply, 45 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  Bulynino, grid 0607, Germany.  100 supply, 61 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Nevel, grid 0903, United States.  100 supply, 53 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+             p38j25, '', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p47d22, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+             p38j25, 'Alpha', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p38j25, 'Bravo', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p38j25, 'Charlie', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p47d22, 'Alpha', mods 1..10     payloads 1..2000
+             p47d22, 'Triple Fives', mods 1..10     payloads 1..2000
+             p47d22, 'Big Bertha', mods 1..10     payloads 1..2000
+             p47d22, 'Fully Loaded', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  Porechye, grid 0807, United States.  100 supply, 50 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  Kuniya, grid 0610, Germany.  100 supply, 47 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Dvin Ye, grid 0711, Germany.  100 supply, 67 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Drozdova, grid 0902, United States.  100 supply, 40 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+             p38j25, '', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p47d22, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+             p38j25, 'Alpha', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p38j25, 'Bravo', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p38j25, 'Charlie', mods 1..10     payloads 1..4/8/9/10/11/15/18..1000
+             p47d22, 'Alpha', mods 1..10     payloads 1..2000
+             p47d22, 'Triple Fives', mods 1..10     payloads 1..2000
+             p47d22, 'Big Bertha', mods 1..10     payloads 1..2000
+             p47d22, 'Fully Loaded', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  St Toropa, grid 0614, Germany.  100 supply, 41 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Nasva, grid 0205, Great Britain.  100 supply, 62 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+        typhoonmkib, '', mods 1..20     payloads 1..2000
+      spitfiremkixe, '', mods 1..7      payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  Velikie Luki, grid 0508, Germany.  100 supply, 73 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Toropets, grid 0414, Germany.  100 supply, 65 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Zabel Ye, grid 0402, Great Britain.  100 supply, 63 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+             p47d22, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+        typhoonmkib, '', mods 1..20     payloads 1..2000
+      spitfiremkixe, '', mods 1..7      payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+             p47d22, 'Alpha', mods 1..10     payloads 1..2000
+             p47d22, 'Triple Fives', mods 1..10     payloads 1..2000
+             p47d22, 'Big Bertha', mods 1..10     payloads 1..2000
+             p47d22, 'Fully Loaded', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+  Cherkizova, grid 0215, Germany.  100 supply, 41 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Kovali, grid 0916, Germany.  100 supply, 69 total blocks
+            bf109g4, '', mods 1..10     payloads 1..2000
+            bf109g6, '', mods 1..10     payloads 1..2000
+        bf109g6late, '', mods 1..10     payloads 1..2000
+            fw190a5, '', mods 1..10     payloads 1..2001
+            fw190a6, '', mods 1..10     payloads 1..2001
+            fw190a8, '', mods 1..10     payloads 1..2001
+            bf110g2, '', mods 1/2/3/5..10payloads 1..2000
+        bf109g6late, 'Die Beule Jabo', mods 1..10     payloads 1..2000
+            fw190a8, 'Anton', mods 1..10     payloads 1..2001
+            fw190a8, 'Anton Jabo', mods 1..10     payloads 1..2001
+            bf110g2, 'Jagdbomber I', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Jagdbomber II', mods 1/2/3/5..10payloads 1..2000
+            bf110g2, 'Zerstoerer', mods 1/2/3/5..10payloads 1..2000
+  Novo, grid 0504, Great Britain.  100 supply, 57 total blocks
+               a20b, '', mods 1..10     payloads 1..2000
+              p51b5, '', mods 1..10     payloads 1..2000
+        typhoonmkib, '', mods 1..20     payloads 1..2000
+      spitfiremkixe, '', mods 1..7      payloads 1..2000
+               a20b, 'Slick', mods 1..10     payloads 1..2000
+              p51b5, 'Rocketstang', mods 1..10     payloads 1..2000
+              p51b5, 'Bombstang', mods 1..10     payloads 1..2000
+Objectives:
+  Nevel Railyard, grid 0903, United States.  100 supply, 98 total blocks, 294 possible supply damage through block kills
+    Blocks by category:
+      railcar_static                 63 block(s)
+      airfield                       3 block(s)
+      supply                         8 block(s)
+      rail                           3 block(s)
+      city                           5 block(s)
+      trash                          15 block(s)
+      military                       1 block(s)
+  Novo Railyard, grid 0505, Great Britain.  100 supply, 151 total blocks, 326 possible supply damage through block kills
+    Blocks by category:
+      supply                         15 block(s)
+      rail                           5 block(s)
+      city                           6 block(s)
+      military                       5 block(s)
+      scenic                         2 block(s)
+      railcar_static                 75 block(s)
+      trash                          40 block(s)
+      vehicle_static                 2 block(s)
+      airfield                       1 block(s)
+  Veliki Rail Terminal, grid 0507, Germany.  100 supply, 429 total blocks, 1416 possible supply damage through block kills
+    Blocks by category:
+      trash                          67 block(s)
+      supply                         47 block(s)
+      military                       6 block(s)
+      rail                           5 block(s)
+      railcar_static                 279 block(s)
+      city                           11 block(s)
+      industrial                     6 block(s)
+      airfield                       3 block(s)
+      vehicle_static                 5 block(s)
+  Sopki Railyard, grid 0510, Germany.  100 supply, 24 total blocks, 94 possible supply damage through block kills
+    Blocks by category:
+      rail                           1 block(s)
+      supply                         11 block(s)
+      scenic                         1 block(s)
+      military                       4 block(s)
+      railcar_static                 5 block(s)
+      city                           1 block(s)
+      trash                          1 block(s)
+  Nasva Railyard, grid 0305, Great Britain.  100 supply, 17 total blocks, 16 possible supply damage through block kills
+    Blocks by category:
+      city                           2 block(s)
+      rail                           1 block(s)
+      trash                          14 block(s)
+  Losevo Grain, grid 0309, Germany.  100 supply, 20 total blocks, 16 possible supply damage through block kills
+    Blocks by category:
+      city                           4 block(s)
+      supply                         2 block(s)
+      trash                          14 block(s)
+  Toropets Rail, grid 0414, Germany.  100 supply, 226 total blocks, 872 possible supply damage through block kills
+    Blocks by category:
+      trash                          28 block(s)
+      rail                           6 block(s)
+      supply                         57 block(s)
+      city                           17 block(s)
+      industrial                     5 block(s)
+      airfield                       7 block(s)
+      military                       7 block(s)
+      railcar_static                 99 block(s)
+  Rojnova Bridges, grid 0910, Germany.  100 supply, 34 total blocks, 68 possible supply damage through block kills
+    Blocks by category:
+      trash                          18 block(s)
+      bridge                         4 block(s)
+      encampment                     1 block(s)
+      vehicle_static                 2 block(s)
+      tank_static                    8 block(s)
+      airfield                       1 block(s)
+  Kamenka Defenses, grid 0310, Germany.  100 supply, 103 total blocks, 125 possible supply damage through block kills
+    Blocks by category:
+      military                       7 block(s)
+      supply                         5 block(s)
+      vehicle_static                 29 block(s)
+      tank_static                    5 block(s)
+      airfield                       3 block(s)
+      trash                          54 block(s)
+  Kuchina Rail Depot, grid 0405, Great Britain.  100 supply, 59 total blocks, 191 possible supply damage through block kills
+    Blocks by category:
+      supply                         8 block(s)
+      trash                          18 block(s)
+      vehicle_static                 16 block(s)
+      military                       2 block(s)
+      tank_static                    12 block(s)
+      rail                           1 block(s)
+      bridge                         2 block(s)
+  Bubnova Rail, grid 0511, Germany.  100 supply, 99 total blocks, 458 possible supply damage through block kills
+    Blocks by category:
+      tank_static                    9 block(s)
+      vehicle_static                 7 block(s)
+      supply                         21 block(s)
+      military                       5 block(s)
+      rail                           3 block(s)
+      industrial                     4 block(s)
+      city                           12 block(s)
+      scenic                         3 block(s)
+      airfield                       2 block(s)
+      trash                          10 block(s)
+      railcar_static                 23 block(s)
+  Manistrova Rail Yard, grid 0612, Germany.  100 supply, 60 total blocks, 274 possible supply damage through block kills
+    Blocks by category:
+      tank_static                    9 block(s)
+      vehicle_static                 8 block(s)
+      supply                         9 block(s)
+      military                       2 block(s)
+      rail                           2 block(s)
+      railcar_static                 17 block(s)
+      industrial                     2 block(s)
+      scenic                         1 block(s)
+      trash                          7 block(s)
+      city                           3 block(s)
+  Markiznova Rail Depot, grid 0704, United States.  100 supply, 21 total blocks, 112 possible supply damage through block kills
+    Blocks by category:
+      supply                         6 block(s)
+      trash                          6 block(s)
+      vehicle_static                 2 block(s)
+      military                       2 block(s)
+      rail                           1 block(s)
+      railcar_static                 4 block(s)
+  Philiptsevo Armored D, grid 0709, Germany.  100 supply, 76 total blocks, 154 possible supply damage through block kills
+    Blocks by category:
+      airfield                       3 block(s)
+      encampment                     2 block(s)
+      supply                         4 block(s)
+      trash                          21 block(s)
+      vehicle_static                 37 block(s)
+      tank_static                    6 block(s)
+      military                       3 block(s)
+  Berezovka Armored Div, grid 0908, United States.  100 supply, 71 total blocks, 80 possible supply damage through block kills
+    Blocks by category:
+      airfield                       3 block(s)
+      encampment                     2 block(s)
+      supply                         2 block(s)
+      trash                          14 block(s)
+      vehicle_static                 45 block(s)
+      tank_static                    5 block(s)
+  Zaluchie Shipping, grid 0711, Germany.  100 supply, 57 total blocks, 105 possible supply damage through block kills
+    Blocks by category:
+      supply                         13 block(s)
+      airfield                       3 block(s)
+      trash                          24 block(s)
+      military                       5 block(s)
+      encampment                     2 block(s)
+      vehicle_static                 5 block(s)
+      coastal                        5 block(s)
+Convoy 'TrainNevelMarkiznova' from 0903 to 0704, type TRAIN, active today: True
+Convoy 'TrainToropetsSopki' from 0414 to 0510, type TRAIN, active today: False
+Convoy 'TrainKuniyaVelikie' from 0610 to 0507, type TRAIN, active today: True
+Convoy 'TrainNevelKochegarov' from 0903 to 0706, type TRAIN, active today: True
+Convoy 'TrainNovoNasva' from 0505 to 0305, type TRAIN, active today: True
+Convoy 'TrainStarayaKuniya' from 0614 to 0610, type TRAIN, active today: False
+Convoy 'ArmoredNevelPorechye' from 0904 to 0807, type ARMORED, active today: False
+Convoy 'ArmoredLosevoVelikie' from 0309 to 0508, type ARMORED, active today: True
+Convoy 'ArmoredPhiliptPorech' from 0709 to 0807, type ARMORED, active today: False
+Convoy 'ArmoredDvinYeRojnova' from 0711 to 0910, type ARMORED, active today: True
+Campaign has a total of 5012 templated blocks.
+Play area boundary NW:  (88811.4, 0.0, 8570.0)
+Play area boundary SE:  (8811.4, 0.0, 108570.0)
+Front line:
+  (5275.9, 0.0, 84740.0)
+  (13129.6, 0.0, 83520.0)
+  (18227.0, 0.0, 81470.0)
+  (23324.4, 0.0, 77340.0)
+  (28421.8, 0.0, 72330.0)
+  (33519.2, 0.0, 67770.0)
+  (38616.6, 0.0, 63470.0)
+  (43714.0, 0.0, 60380.0)
+  (48811.4, 0.0, 58570.0)
+  (53908.8, 0.0, 58130.0)
+  (59006.2, 0.0, 58730.0)
+  (64103.6, 0.0, 59990.0)
+  (69201.0, 0.0, 61580.0)
+  (74298.4, 0.0, 63140.0)
+  (79395.8, 0.0, 64470.0)
+  (84493.2, 0.0, 65540.0)
+  (92346.9, 0.0, 66430.0)
+Points of interest:
+   Velikie Luki, grid 0507, position (53087.6, 65.0, 65893.7)
+   Novosokolniki, grid 0505, position (54449.5, 94.6, 42523.2)
+   Nasva, grid 0305, position (80509.2, 63.8, 44655.0)
+   Toropets, grid 0414, position (68785.5, 105.0, 134576.7)
+   Nevel, grid 0903, position (18412.2, 124.3, 27107.5)
+   Isocha, grid 0704, position (34225.4, 137.2, 37030.5)
+   Ilovets, grid 0410, position (67734.6, 63.8, 94684.5)
+   Kuniya, grid 0610, position (46888.6, 63.8, 92462.9)
+   Dedovo, grid 0914, position (17426.5, 63.8, 138309.8)
+Navigation points:
+   Big Lake 0804, grid 0804, position (29003.1, 115.5, 36235.6)
+   Big Lake 0907, grid 0907, position (14130.7, 105.0, 66518.5)
+   Big Lake 0912, grid 0912, position (21096.3, 105.0, 111156.2)
+   Lake Island 0712, grid 0712, position (40940.2, 105.0, 111251.2)
+   Lake 0516, grid 0516, position (58540.2, 63.8, 152078.6)
+   Koshelevo, grid 1005, position (9051.4, 63.8, 46022.4)
+   Timochny, grid 0506, position (59603.8, 63.8, 55420.5)
+   Sidorovshina, grid 0407, position (70634.6, 63.8, 60817.6)
+   Zhary, grid 0206, position (87322.8, 63.8, 59845.8)
+   Savino, grid 0805, position (24709.5, 63.8, 48121.7)
+Damaged 'template' blocks:

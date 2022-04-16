@@ -4,6 +4,17 @@
 require 'google/protobuf'
 
 Google::Protobuf::DescriptorPool.generated_pool.build do
+  add_message "campaign_library.protobuf.CampaignAircraftLoadout" do
+    optional :Airframe, :string, 1
+    optional :WMMask, :string, 2
+    optional :PayloadId, :int32, 3
+    optional :Fuel, :double, 4
+    optional :LoadoutName, :string, 5
+    optional :Description, :string, 6
+    optional :NumBombs, :int32, 7
+    optional :NumRockets, :int32, 8
+    optional :Country, :message, 9, "campaign_library.protobuf.CampaignCountry"
+  end
   add_message "campaign_library.protobuf.CampaignAirfield" do
     repeated :Blocks, :message, 1, "campaign_library.protobuf.CampaignBlock"
     repeated :AvailableAirframes, :message, 2, "campaign_library.protobuf.CampaignAvailableAirframe"
@@ -23,6 +34,17 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :Position, :message, 4, "campaign_library.protobuf.CampaignPosition"
     optional :Category, :string, 5
   end
+  add_message "campaign_library.protobuf.CampaignConvoy" do
+    optional :Name, :string, 1
+    optional :Start, :message, 2, "campaign_library.protobuf.CampaignPosition"
+    optional :End, :message, 3, "campaign_library.protobuf.CampaignPosition"
+    repeated :Waypoints, :message, 4, "campaign_library.protobuf.CampaignPosition"
+    optional :StartGrid, :string, 5
+    optional :EndGrid, :string, 6
+    optional :Type, :enum, 7, "campaign_library.protobuf.CampaignConvoyType"
+    optional :Country, :message, 8, "campaign_library.protobuf.CampaignCountry"
+    optional :ActiveToday, :bool, 9
+  end
   add_message "campaign_library.protobuf.CampaignCountry" do
     optional :Name, :string, 1
     optional :Code, :int32, 2
@@ -36,6 +58,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
   add_message "campaign_library.protobuf.CampaignFrontLine" do
     optional :Name, :string, 1
     repeated :PositionsInFrontLine, :message, 2, "campaign_library.protobuf.CampaignPosition"
+  end
+  add_message "campaign_library.protobuf.CampaignNavigationPoint" do
+    optional :Position, :message, 1, "campaign_library.protobuf.CampaignPosition"
+    optional :Grid, :string, 2
+    optional :Name, :string, 3
   end
   add_message "campaign_library.protobuf.CampaignObjective" do
     optional :Type, :enum, 1, "campaign_library.protobuf.CampaignObjectiveType"
@@ -55,6 +82,11 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :PlayAreaBoundaryNorthWest, :message, 6, "campaign_library.protobuf.CampaignPosition"
     optional :PlayAreaBoundarySouthEast, :message, 7, "campaign_library.protobuf.CampaignPosition"
     repeated :TemplatedBlocks, :message, 8, "campaign_library.protobuf.CampaignBlock"
+    repeated :AircraftLoadouts, :message, 9, "campaign_library.protobuf.CampaignAircraftLoadout"
+    optional :Map, :string, 10
+    repeated :Convoys, :message, 11, "campaign_library.protobuf.CampaignConvoy"
+    repeated :PointsOfInterest, :message, 12, "campaign_library.protobuf.CampaignNavigationPoint"
+    repeated :NavigationPoints, :message, 13, "campaign_library.protobuf.CampaignNavigationPoint"
   end
   add_message "campaign_library.protobuf.CampaignSupplyPoint" do
     optional :Name, :string, 1
@@ -62,13 +94,19 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :Country, :message, 3, "campaign_library.protobuf.CampaignCountry"
     optional :SupplyLevel, :int32, 4
     optional :ActiveToday, :bool, 5
+    optional :Grid, :string, 6
     oneof :subtype do
       optional :CampaignAirfield, :message, 11, "campaign_library.protobuf.CampaignAirfield"
       optional :CampaignObjective, :message, 12, "campaign_library.protobuf.CampaignObjective"
     end
   end
-  add_enum "campaign_library.protobuf.CampaignObjectiveType" do
+  add_enum "campaign_library.protobuf.CampaignConvoyType" do
     value :UNKNOWN, 0
+    value :TRAIN, 1
+    value :ARMORED, 2
+  end
+  add_enum "campaign_library.protobuf.CampaignObjectiveType" do
+    value :NOT_KNOWN, 0
     value :STRATEGIC, 1
     value :POP_UP, 2
   end
@@ -76,16 +114,20 @@ end
 
 module CampaignLibrary
   module Protobuf
+    CampaignAircraftLoadout = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignAircraftLoadout").msgclass
     CampaignAirfield = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignAirfield").msgclass
     CampaignAvailableAirframe = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignAvailableAirframe").msgclass
     CampaignBlock = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignBlock").msgclass
+    CampaignConvoy = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignConvoy").msgclass
     CampaignCountry = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignCountry").msgclass
     CampaignDay = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignDay").msgclass
     CampaignFrontLine = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignFrontLine").msgclass
+    CampaignNavigationPoint = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignNavigationPoint").msgclass
     CampaignObjective = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignObjective").msgclass
     CampaignPosition = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignPosition").msgclass
     CampaignState = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignState").msgclass
     CampaignSupplyPoint = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignSupplyPoint").msgclass
+    CampaignConvoyType = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignConvoyType").enummodule
     CampaignObjectiveType = Google::Protobuf::DescriptorPool.generated_pool.lookup("campaign_library.protobuf.CampaignObjectiveType").enummodule
   end
 end

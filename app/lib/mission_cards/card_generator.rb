@@ -12,12 +12,12 @@ class MissionCards::CardGenerator
 
   def generate_cards!
     new_cards = []
-    plane_options.each do |plane_option|
+    plane_options.each do |airframe, airfields|
       areas_of_operation.each do |area_of_operation|
-        plane_option["airfields"].each do |airfield|
+        airfields.each do |airfield|
           attrs = {
-            plane: plane_option["type"],
-            airfield: airfield["name"],
+            plane: airframe,
+            airfield: airfield,
             death_percentage: 10,
             capture_percentage: 10,
             loadout: 1,
@@ -42,28 +42,38 @@ class MissionCards::CardGenerator
   end
 
   def plane_options
-    available_planes.select do |plane_config|
-      plane = MissionCards::Plane.new(plane_config["type"])
+    available_planes.select do |airframe, airfields|
+      plane = MissionCards::Plane.new(airframe)
+
       template.plane.present? &&
         template.plane.split(',').map(&:strip).any? { |role| plane.send("#{role}?".to_sym) } ||
-        template.plane.nil? &&
-        plane_config["airfields"].any? { |airfield| airfield["airforce"] == template.airforce}
+        template.plane.nil?
     end
   end
 
   def areas_of_operation
     if template.targets == "fighters"
-      attackable_targets.map {|target_config| target_config["areas_of_operation"]}
+      attackable_targets.values
     elsif template.targets == "bombers" || template.targets == "attackers" || template.defend == 'all ground targets'
-      defendable_targets.map {|target_config| target_config["areas_of_operation"]}
+      defendable_targets.values
     elsif template.defend.present?
-      defendable_targets.select do |target_config|
-        template.defend.include? target_config["type"]
-      end.map {|target_config| target_config["areas_of_operation"]} 
+      # TODO: targets needs to be an array
+      if template.targets.is_a? Array
+        template.targets.map do |target_type|
+          defendable_targets[target_type]
+        end.compact
+      else
+        attackable_targets[template.targets]
+      end
     else
-      attackable_targets.select do |target_config|
-        template.targets.include? target_config["type"]
-      end.map {|target_config| target_config["areas_of_operation"]}
+      # TODO: targets needs to be an array
+      if template.targets.is_a? Array
+        template.targets.map do |target_type|
+          attackable_targets[target_type]
+        end.flatten.compact.uniq
+      else
+        attackable_targets[template.targets]
+      end
     end.flatten.uniq
   end
 end

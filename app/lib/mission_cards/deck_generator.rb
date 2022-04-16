@@ -24,34 +24,33 @@ class MissionCards::DeckGenerator
   end
 
   def self.opposite_coalition(coalition)
-    return "axis" if coalition == "allies"
-    "allies"
+    return "axis" if coalition == "allied"
+    "allied"
   end
   
-  def initialize
-    @deck_config = YAML.load_file './static_data/deck_config.yml'
+  def initialize(deck_config)
+    # @deck_config = YAML.load_file './static_data/deck_config.yml'
+    @deck_config = deck_config
   end
 
   def attackable_targets(coalition)
-    deck_config[coalition]['targets']
+    deck_config.send("#{self.class.opposite_coalition(coalition)}_targets")
   end
 
   def defendable_targets(coalition)
-    deck_config[self.class.opposite_coalition(coalition)]['targets']
+    coalition = coalition == "allies" ? "allied" : "axis"
+    deck_config.send("#{coalition}_targets")
   end
 
   def available_planes(airforce)
-    deck_config[airforce.coalition]['planes'].select do |plane_config|
-      plane_config['airfields'].any? do |airfield_config|
-        airfield_config['airforce'].downcase == airforce.name.downcase
-      end
-    end
+    coalition = airforce.coalition == "allies" ? "allied" : "axis"
+    deck_config.send("#{coalition}_airframes")[airforce.name.downcase.to_sym]
   end
 
   def actionable_card_templates(airforce)
     templates = CardTemplate.where(
       airforce: airforce.name,
-      targets: attackable_targets(airforce.coalition).map { |target| target['type'] }
+      targets: attackable_targets(airforce.coalition).keys
     )
   end
 
