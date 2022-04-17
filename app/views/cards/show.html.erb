@@ -1,0 +1,20 @@
+<div>
+  <h1><%= @card.title%> </h1>
+
+
+  <ul>
+    <li>
+      <%= @card.mission_description_text %>
+    </li>
+    <li>
+      <%= "#{@card.targets} are worth #{@card.target_values}" %>
+    </li>
+    <li>
+      <%= "Take off with from #{@card.airfield} in a #{@card.plane}" %>
+    </li>
+  </ul>
+
+  <i>
+    <%= @card.flavour_text %>
+  </i>
+</div>

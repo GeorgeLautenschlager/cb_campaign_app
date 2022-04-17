@@ -1,0 +1,12 @@
+<div>
+  <h1><%= @pilot.to_s%> </h1>
+
+  <h3>Missions:</h3>
+  <ul>
+    <% @pilot.cards.each do |card| %>
+      <li>
+        <%= link_to card.title, card_path(card.id) %> 
+      </li>
+    <% end %>
+  </ul>
+</div>

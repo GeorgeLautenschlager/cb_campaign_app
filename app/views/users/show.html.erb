@@ -5,41 +5,24 @@
   </h1>
 
   <div>
-    <h3> Pilots </h3>
+    <h3> Pilots: </h3>
 
     <div>
-      Allied Pilot: <%= current_user.allied_pilot.to_s %>
+      RAF Pilot: <%= link_to current_user.raf_pilot.to_s, pilot_path(current_user.raf_pilot) %>
     </div>
 
     <div>
-      Axis Pilot: <%= current_user.axis_pilot.to_s %>
+      USAAF Pilot: <%= link_to current_user.usaaf_pilot.to_s, pilot_path(current_user.usaaf_pilot) %>
     </div>
-  </div>
 
-  <div>
-    <h3>
-      Next Mission <%= button_to 'Mulligan', mulligan_path(current_user.id), method: :get %>
-    </h3>
+    <div>
+      VVS Pilot: <%= link_to current_user.vvs_pilot.to_s, pilot_path(current_user.vvs_pilot) %>
+    </div>
 
-    <%
-=begin%>
- <ul>
-      <li>
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "goal"}).first.card_template.description %>:
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "goal"}).first.card_template.details %>
-      </li>
-      <li>
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "modifier"}).first.card_template.description %>:
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "modifier"}).first.card_template.details %>
-      </li>
-      <li>
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "buff"}).first.card_template.description %>:
-        <%= current_user.cards.includes(:card_template).where(card_template: {category: "buff"}).first.card_template.details %>
-      </li>
-    </ul> 
-<%
-=end%>
+    <div>
+      Luftwaffe Pilot: <%= link_to current_user.luftwaffe_pilot.to_s, pilot_path(current_user.luftwaffe_pilot) %>
+    </div>
+
+    <%= button_to 'Mulligan', mulligan_path(current_user.id), method: :get %>
   </div>
-  <%= button_to 'Back to Briefing Room', briefing_room_path, method: :get %>
-  <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
