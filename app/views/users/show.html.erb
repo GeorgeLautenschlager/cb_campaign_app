@@ -24,5 +24,8 @@
     </div>
 
     <%= button_to 'Mulligan', mulligan_path(current_user.id), method: :get %>
+    </br>
+    </br>
+    <%= button_to 'Log Out', destroy_user_session_path, method: :delete %>
   </div>
 </div>
