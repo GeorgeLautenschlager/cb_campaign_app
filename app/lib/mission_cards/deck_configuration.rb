@@ -2,7 +2,6 @@ require 'protobufs/velikie-campaign_pb.rb'
 
 class MissionCards::DeckConfiguration
   attr_reader :allied_objectives, :axis_objectives, :allied_targets, :axis_targets, :allied_airframes, :axis_airframes
-  PROTO_PATH = 'static_data/day-16/velikie-campaign.state'
 
   TARGET_CATEGORIES_MAP = {
     'coastal' => ["coastal logistics"],
@@ -19,58 +18,14 @@ class MissionCards::DeckConfiguration
     'vehicle_static' => ["ground units"],
   }
 
-  # TARGET_CATEGORIES_MAP = {
-  #   "coastal logistics" ['coastal'],
-  #   "bridges" ['bridge'],
-  #   "trains" => ['railcar_static'],
-  #   "ships" => ['ship_static'],
-  #   "tanks" => ['tank_static'],
-  #   "V1 launch sites" => ['v1launcher_static'],
-  #   "radar sites" => ['radar_static'],
-  #   "bases" => ['encampment', 'military', 'radar_static'],
-  #   "industrial buildings", => ['industrial', 'rail'],
-  #   "fuel storage" => ['supply?ReadableName~=fuel', 'vehicle_static?ReadableName~=fuel'],
-  #   "ground units", ['tank_static', 'vehicle_static']
-  # }
-
   # TODO:
   #   - Fuel Storage
   #   - Jabo
   #   - aerial targets
   #   - airfields as targets (OCA)
 
-  # ['supply?ReadableName~=fuel', 'vehicle_static?ReadableName~=fuel'] => "fuel storage",
-  # "all units",
-  # "Stay in <AO> for X minutes",
-  # "air units",
-  # "fighters",
-  # "bombers"
-
-  # block_categories = [
-  #   "???",
-  #   "aircraft_static",
-  #   "airfield",
-  #   "bridge",
-  #   "city",
-  #   "coastal",
-  #   "details",
-  #   "encampment",
-  #   "FAKEBLOCK",
-  #   "industrial",
-  #   "military",
-  #   "radar_static",
-  #   "rail",
-  #   "railcar_static",
-  #   "scenic",
-  #   "ship_static",
-  #   "supply",
-  #   "tank_static",
-  #   "v1launcher_static",
-  #   "vehicle_static",
-  # ]
-
   def initialize
-    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.read(PROTO_PATH)
+    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.read(Constants::PROTO_PATH)
 
     @allied_objectives = @proto_buff_data.Objectives.select do |objective|
       ["United States", "Great Britain"].include? objective.Country.Name
