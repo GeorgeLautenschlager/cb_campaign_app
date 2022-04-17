@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_22_031145) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_16_184746) do
   create_table "airforces", force: :cascade do |t|
     t.string "name"
     t.string "coalition"
@@ -61,6 +61,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_22_031145) do
     t.integer "death_percentage"
     t.integer "capture_percentage"
     t.string "area_of_operation"
+  end
+
+  create_table "cards_pilots", id: false, force: :cascade do |t|
+    t.bigint "card_id"
+    t.bigint "pilot_id"
+    t.index ["card_id"], name: "index_cards_pilots_on_card_id"
+    t.index ["pilot_id"], name: "index_cards_pilots_on_pilot_id"
   end
 
   create_table "pilots", force: :cascade do |t|

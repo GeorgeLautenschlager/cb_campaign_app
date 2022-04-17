@@ -1,4 +1,6 @@
 describe User do
+  include_context "app config"
+  
   describe "#create" do
     subject { create :user }
     

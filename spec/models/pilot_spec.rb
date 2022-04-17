@@ -1,4 +1,6 @@
 describe Pilot do
+  include_context "app config"
+
   describe "create" do
     context "RAF" do
       subject { create :raf_pilot }

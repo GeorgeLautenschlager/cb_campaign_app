@@ -1,7 +1,9 @@
 class Pilot < ApplicationRecord
   belongs_to :user, optional: true
+  has_and_belongs_to_many :cards
 
   after_initialize :assign_names!, if: :new_record?
+  after_create :deal_hand!
 
   def assign_names!
     assign_first_name!
@@ -46,6 +48,10 @@ class Pilot < ApplicationRecord
 
   def names_filename
     raise NoMethodError
+  end
+
+  def deal_hand!
+    update! cards: Card.where(airforce: airforce.name).limit(5).order("RANDOM()")
   end
 
   private

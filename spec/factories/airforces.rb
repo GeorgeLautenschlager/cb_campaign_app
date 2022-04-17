@@ -5,12 +5,12 @@ FactoryBot.define do
 
   trait :raf do
     name { 'RAF' }
-    coalition { 'allies' }
+    coalition { 'allied' }
   end
 
   trait :usaaf do
     name { 'USAAF' }
-    coalition { 'allies' }
+    coalition { 'allied' }
   end
 
   trait :luftwaffe do
@@ -20,6 +20,6 @@ FactoryBot.define do
 
   trait :vvs do
     name { 'VVS' }
-    coalition { 'allies' }
+    coalition { 'allied' }
   end
 end

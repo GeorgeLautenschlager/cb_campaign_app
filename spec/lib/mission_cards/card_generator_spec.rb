@@ -79,9 +79,8 @@ describe MissionCards::CardGenerator do
         areas_of_operation = subject.areas_of_operation
 
         expect(areas_of_operation).to match_array [
-          "Bubnova Rail", "Kamenka Defenses", "Manistrova Rail Yard",
-          "Philiptsevo Armored D", "Rojnova Bridges", "Sopki Railyard",
-          "Toropets Rail", "Veliki Rail Terminal", "Zaluchie Shipping"
+          "Berezovka Armored Div", "Kuchina Rail Depot", "Markiznova Rail Depot",
+          "Nasva Railyard", "Nevel Railyard", "Novo Railyard"
         ]
       end
     end
@@ -95,7 +94,7 @@ describe MissionCards::CardGenerator do
         cards = subject.generate_cards!
         result = cards.map { |card| [card.title, card.area_of_operation, card.airfield, card.plane] }
 
-        expect(result.length).to eq 432
+        expect(result.length).to eq 648
       end
     end
 
@@ -107,6 +106,17 @@ describe MissionCards::CardGenerator do
         result = cards.map { |card| [card.title, card.area_of_operation, card.airfield, card.plane] }
 
         expect(result.length).to eq 72
+      end
+    end
+
+    context "for a Bomber Interdiction" do
+      let(:card_template) { CardTemplate.find_by title: "Bomber Interdiction", airforce: "USAAF"}
+
+      it 'generates missions for friendly objectives' do
+        cards = subject.generate_cards!
+        result = cards.map { |card| [card.title, card.area_of_operation, card.airfield, card.plane] }
+
+        expect(result.length).to eq 48
       end
     end
 

@@ -7,8 +7,6 @@ class User < ApplicationRecord
   has_one :luftwaffe_pilot, dependent: :destroy
   has_one :vvs_pilot, dependent: :destroy
 
-  has_many :cards, dependent: :destroy
-
   after_create :assign_pilots!
 
   def assign_pilots!

@@ -1,10 +1,10 @@
 class MissionCards::CardGenerator
-  attr_reader :template, :available_planes, :attackable_targets, :defendable_targets
+  attr_reader :template, :available_planes, :attackable_targets, :defendable_targets, :airforce
 
   def initialize(template, deck_generator)
     @template = template
 
-    airforce = Airforce.find_by(name: template.airforce)
+    @airforce = Airforce.find_by(name: template.airforce)
     @available_planes = deck_generator.available_planes(airforce)
     @attackable_targets = deck_generator.attackable_targets(airforce.coalition)
     @defendable_targets = deck_generator.defendable_targets(airforce.coalition)
@@ -22,17 +22,18 @@ class MissionCards::CardGenerator
             capture_percentage: 10,
             loadout: 1,
             area_of_operation: area_of_operation,
-            card_template: template
+            card_template: template,
+            mission_description_text: template.attributes["mission_description_text"].gsub(/<AO>/, area_of_operation),
+            airforce: @airforce.name,
           }.merge(template.attributes.slice(
             "coalition",
             "airforce",
             "title",
-            "mission_description_text",
             "flavour_text",
             "targets",
             "target_values"
           ))
-          
+
           new_cards << Card.create!(attrs)
         end
       end
