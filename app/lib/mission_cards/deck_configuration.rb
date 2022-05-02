@@ -24,8 +24,9 @@ class MissionCards::DeckConfiguration
   #   - aerial targets
   #   - airfields as targets (OCA)
 
-  def initialize
-    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.read(Constants::PROTO_PATH)
+  def initialize(proto_path = nil)
+    proto_path ||= Constants::PROTO_PATH
+    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.read(proto_path)
 
     @allied_objectives = @proto_buff_data.Objectives.select do |objective|
       ["United States", "Great Britain"].include? objective.Country.Name

@@ -58,6 +58,7 @@ end
 
 gem 'devise'
 gem 'bootstrap'
+gem 'listen'
 
 group :production do
   gem 'pg'
