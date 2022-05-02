@@ -4,6 +4,7 @@ module Constants
   elsif Rails.env.testing?
     'static_data/day-16/velikie-campaign.state'
   else
-    'static_data/day-16/velikie-campaign.state'
+    # 'static_data/day-16/velikie-campaign.state'
+    '/mnt/c/Combat_Box/apollo/my-vl-campaign'
   end
 end
