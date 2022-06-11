@@ -251,7 +251,6 @@ GEM
     walker_method (0.0.1)
     warden (1.2.9)
       rack (>= 2.0.9)
-    wdm (0.1.1)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -272,7 +271,6 @@ DEPENDENCIES
   database_cleaner-active_record
   debug
   devise
-  execjs
   factory_bot_rails
   google-protobuf
   importmap-rails
@@ -290,7 +288,6 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   walker_method
-  wdm (>= 0.1.0)
   web-console
 
 RUBY VERSION

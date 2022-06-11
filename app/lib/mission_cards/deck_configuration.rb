@@ -10,7 +10,7 @@ class MissionCards::DeckConfiguration
     'ship_static' => ["ships"],
     'encampment' => ["bases"],
     'v1launcher_static' => ["V1 launch sites"],
-    'military' => ["bases"], 
+    'military' => ["bases"],
     'industrial' => ["industrial buildings"],
     'rail' => ["industrial buildings"],
     'tank_static' => ["tanks", "ground units"],
@@ -26,7 +26,7 @@ class MissionCards::DeckConfiguration
 
   def initialize(proto_path = nil)
     proto_path ||= Constants::PROTO_PATH
-    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.read(proto_path)
+    @proto_buff_data = CampaignLibrary::Protobuf::CampaignState.decode File.open(proto_path,'rb').read
 
     @allied_objectives = @proto_buff_data.Objectives.select do |objective|
       ["United States", "Great Britain"].include? objective.Country.Name
@@ -65,7 +65,7 @@ class MissionCards::DeckConfiguration
     @allied_targets.delete nil
 
     # TODO: loadouts
-    @allied_airframes = { 
+    @allied_airframes = {
       raf: Hash.new { |h, k| h[k] = [] },
       usaaf: Hash.new { |h, k| h[k] = [] },
       vvs: Hash.new { |h, k| h[k] = [] },
