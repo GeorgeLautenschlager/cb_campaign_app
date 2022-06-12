@@ -1,0 +1,106 @@
+syntax = "proto3";
+package campaign_library.protobuf;
+import "protobuf-net/bcl.proto"; // schema for protobuf-net's handling of core .NET types
+
+message Aircraft {
+   string Type = 1;
+   BotPilot Pilot = 2;
+}
+message BotPilot {
+   int64 Id = 1;
+}
+message CampaignCountry {
+   string Name = 1;
+   int32 Code = 2;
+}
+message CampaignDayStart {
+   .bcl.DateTime DayStartTime = 1;
+   int32 DayInCampaign = 2;
+}
+message CampaignPosition {
+   double X = 1;
+   double Y = 2;
+   double Z = 3;
+}
+message Damage {
+   double Amount = 1;
+   MissionObject Attacker = 2;
+   MissionObject Victim = 3;
+   CampaignPosition Position = 4;
+}
+message Disconnect {
+   MissionObject Aircraft = 1;
+   CampaignPosition Position = 2;
+}
+message Kill {
+   MissionObject Attacker = 1;
+   MissionObject Victim = 2;
+   CampaignPosition Position = 3;
+}
+message Landing {
+   MissionObject Aircraft = 1;
+   CampaignPosition Position = 2;
+}
+message MissionEvent {
+   .bcl.DateTime EventTime = 10;
+   oneof subtype {
+      Kill Kill = 1;
+      Damage Damage = 2;
+      Spawn Spawn = 3;
+      PlayerSpawn PlayerSpawn = 4;
+      Landing Landing = 5;
+      Takeoff Takeoff = 6;
+      SortieEnd SortieEnd = 7;
+      Disconnect Disconnect = 8;
+      CampaignDayStart CampaignDayStart = 9;
+   }
+}
+message MissionEvents {
+   repeated MissionEvent Events = 1;
+}
+message MissionObject {
+   int64 Id = 1;
+   string Model = 2;
+   CampaignCountry Country = 3;
+   oneof subtype {
+      StaticBlock StaticBlock = 4;
+      Aircraft Aircraft = 5;
+      Vehicle Vehicle = 6;
+   }
+}
+message PlayerSpawn {
+   MissionObject Aircraft = 1;
+   CampaignPosition Position = 2;
+   CampaignCountry Country = 3;
+   string PlayerName = 4;
+   string PlayerId = 5;
+   int32 NumBombs = 6;
+   int32 NumRockets = 7;
+   int32 PayloadId = 8;
+   double Fuel = 9;
+   string Skin = 10;
+   string WeaponMods = 11;
+}
+message SortieEnd {
+   MissionObject Aircraft = 1;
+   CampaignPosition Position = 2;
+}
+message Spawn {
+   MissionObject ThingSpawned = 1;
+   MissionObject Parent = 2;
+   CampaignCountry Country = 3;
+   CampaignPosition Position = 4;
+}
+message StaticBlock {
+   int32 SupplyPointId = 1;
+   CampaignPosition Position = 2;
+   string Category = 3;
+}
+message Takeoff {
+   MissionObject Aircraft = 1;
+   CampaignPosition Position = 2;
+}
+message Vehicle {
+   string Category = 1;
+}
+
