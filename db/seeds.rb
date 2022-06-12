@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+Airforce.create!(name: "RAF", coalition: "allied")
+Airforce.create!(name: "USAAF", coalition: "allied")
+Airforce.create!(name: "VVS", coalition: "allied")
+Airforce.create!(name: "Luftwaffe", coalition: "axis")
+
+MissionCards::DeckGenerator.sync_card_templates!

@@ -31,7 +31,7 @@ class MissionCards::DeckGenerator
     return "axis" if coalition == "allied"
     "allied"
   end
-  
+
   def initialize(deck_config)
     # @deck_config = YAML.load_file './static_data/deck_config.yml'
     @deck_config = deck_config
@@ -57,7 +57,7 @@ class MissionCards::DeckGenerator
 
   def generate!
     Card.destroy_all
-    
+
     Airforce.all.map do |airforce|
       generate_for_airforce!(airforce)
     end.flatten
