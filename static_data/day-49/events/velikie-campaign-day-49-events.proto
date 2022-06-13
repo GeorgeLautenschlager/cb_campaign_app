@@ -1,6 +1,44 @@
 syntax = "proto3";
 package campaign_library.protobuf;
-import "protobuf-net/bcl.proto"; // schema for protobuf-net's handling of core .NET types
+
+message TimeSpan {
+  sint64 value = 1; // the size of the timespan (in units of the selected scale)
+  TimeSpanScale scale = 2; // the scale of the timespan
+  enum TimeSpanScale {
+    DAYS = 0;
+    HOURS = 1;
+    MINUTES = 2;
+    SECONDS = 3;
+    MILLISECONDS = 4;
+
+    MINMAX = 15; // dubious
+  }
+}
+
+message DateTime {
+  sint64 value = 1; // the offset (in units of the selected scale) from 1970/01/01
+  TimeSpanScale scale = 2; // the scale of the timespan
+  enum TimeSpanScale {
+    DAYS = 0;
+    HOURS = 1;
+    MINUTES = 2;
+    SECONDS = 3;
+    MILLISECONDS = 4;
+
+    MINMAX = 15; // dubious
+  }
+}
+
+message Guid {
+  fixed64 lo = 1; // the first 8 bytes of the guid
+  fixed64 hi = 2; // the second 8 bytes of the guid
+}
+
+message Decimal {
+  uint64 lo = 1; // the first 64 bits of the underlying value
+  uint32 hi = 2; // the last 32 bis of the underlying value
+  sint32 signScale = 3; // the number of decimal digits, and the sign
+}
 
 message Aircraft {
    string Type = 1;
@@ -14,7 +52,7 @@ message CampaignCountry {
    int32 Code = 2;
 }
 message CampaignDayStart {
-   .bcl.DateTime DayStartTime = 1;
+   DateTime DayStartTime = 1;
    int32 DayInCampaign = 2;
 }
 message CampaignPosition {
@@ -42,7 +80,7 @@ message Landing {
    CampaignPosition Position = 2;
 }
 message MissionEvent {
-   .bcl.DateTime EventTime = 10;
+   DateTime EventTime = 10;
    oneof subtype {
       Kill Kill = 1;
       Damage Damage = 2;
