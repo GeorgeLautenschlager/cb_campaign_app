@@ -44,6 +44,9 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :Type, :enum, 7, "campaign_library.protobuf.CampaignConvoyType"
     optional :Country, :message, 8, "campaign_library.protobuf.CampaignCountry"
     optional :ActiveToday, :bool, 9
+    optional :ArrivedAtDestinationMOP, :message, 10, "campaign_library.protobuf.CampaignPosition"
+    optional :DestroyedMOP, :message, 11, "campaign_library.protobuf.CampaignPosition"
+    repeated :Bridges, :message, 12, "campaign_library.protobuf.CampaignBlock"
   end
   add_message "campaign_library.protobuf.CampaignCountry" do
     optional :Name, :string, 1
@@ -95,20 +98,24 @@ Google::Protobuf::DescriptorPool.generated_pool.build do
     optional :SupplyLevel, :int32, 4
     optional :ActiveToday, :bool, 5
     optional :Grid, :string, 6
+    optional :Id, :int32, 7
     oneof :subtype do
       optional :CampaignAirfield, :message, 11, "campaign_library.protobuf.CampaignAirfield"
       optional :CampaignObjective, :message, 12, "campaign_library.protobuf.CampaignObjective"
     end
   end
   add_enum "campaign_library.protobuf.CampaignConvoyType" do
-    value :UNKNOWN, 0
+    value :UNKNOWN_CONVOY, 0
     value :TRAIN, 1
     value :ARMORED, 2
   end
   add_enum "campaign_library.protobuf.CampaignObjectiveType" do
-    value :NOT_KNOWN, 0
+    value :UNKNOWN_OBJECTIVE_TYPE, 0
     value :STRATEGIC, 1
     value :POP_UP, 2
+    value :MEDIUM, 3
+    value :SMALL, 4
+    value :AIRFIELD, 5
   end
 end
 
