@@ -1,7 +1,6 @@
 <div>
   <h1><%= @card.title%> </h1>
 
-
   <ul>
     <li>
       <%= @card.mission_description_text %>
@@ -17,4 +16,12 @@
   <i>
     <%= @card.flavour_text %>
   </i>
+
+  <div>
+    <% if @card.active? %>
+      <%= "Mission Active"%>
+    <% elsif @card.pilot.cards.active.none? %>
+      <%= link_to 'Activate this Card', activate_card_path(@card) %>
+    <% end %>
+  </div>
 </div>

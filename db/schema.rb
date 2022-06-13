@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_16_184746) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_13_012948) do
   create_table "airforces", force: :cascade do |t|
     t.string "name"
     t.string "coalition"
@@ -61,6 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_16_184746) do
     t.integer "death_percentage"
     t.integer "capture_percentage"
     t.string "area_of_operation"
+    t.boolean "active"
   end
 
   create_table "cards_pilots", id: false, force: :cascade do |t|

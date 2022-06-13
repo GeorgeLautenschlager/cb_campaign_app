@@ -5,7 +5,10 @@
   <ul>
     <% @pilot.cards.each do |card| %>
       <li>
-        <%= link_to card.title, card_path(card.id) %> 
+        <%= link_to card.title, card_path(card.id) %>
+        <% if card.active?%>
+          <%= "Active"%>
+        <% end %>
       </li>
     <% end %>
   </ul>

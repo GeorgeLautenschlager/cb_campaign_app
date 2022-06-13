@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   # Routes set up by models
   resources :users, only: [:show]
   resources :pilots, only: [:show]
-  resources :cards, only: [:show]
+  resources :cards, only: [:show] do
+    member do
+      get 'activate'
+    end
+  end
 
   # Non-restful URLs
   get 'users/:id/mulligan', to: 'users#mulligan', as: :mulligan

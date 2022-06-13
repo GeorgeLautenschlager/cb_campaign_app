@@ -6,6 +6,12 @@ class CardsController < ApplicationController
 
   end
 
+  def activate
+    @card.activate!
+
+    redirect_to card_path(@card)
+  end
+
   private
 
   def load_card
