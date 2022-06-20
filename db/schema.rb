@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_13_012948) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_14_022429) do
   create_table "airforces", force: :cascade do |t|
     t.string "name"
     t.string "coalition"
@@ -69,6 +69,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_13_012948) do
     t.bigint "pilot_id"
     t.index ["card_id"], name: "index_cards_pilots_on_card_id"
     t.index ["pilot_id"], name: "index_cards_pilots_on_pilot_id"
+  end
+
+  create_table "mission_tracks", force: :cascade do |t|
+    t.integer "card_id"
+    t.integer "bot_pilot_id"
+    t.string "aasm_state"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bot_pilot_id"], name: "index_mission_tracks_on_bot_pilot_id"
   end
 
   create_table "pilots", force: :cascade do |t|

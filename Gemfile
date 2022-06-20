@@ -35,6 +35,7 @@ gem 'walker_method'
 gem 'google-protobuf'
 gem 'tzinfo-data'
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
+gem 'aasm'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

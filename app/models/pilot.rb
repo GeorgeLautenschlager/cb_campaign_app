@@ -19,7 +19,7 @@ class Pilot < ApplicationRecord
   end
 
   def to_s
-    "#{first_name} #{last_name}"
+    "##{id} #{first_name} #{last_name}"
   end
 
   def allied?

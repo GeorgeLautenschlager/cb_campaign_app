@@ -1,6 +1,7 @@
 class Card < ApplicationRecord
   belongs_to :card_template
   has_and_belongs_to_many :pilots
+  has_one :mission_track
 
   scope :active, -> { where(active: true) }
 
@@ -12,6 +13,7 @@ class Card < ApplicationRecord
 
   def activate!
     update!(active: true)
+    MissionTrack.create! card: self
   end
 
   def pilot
